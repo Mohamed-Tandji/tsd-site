@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0b1b2b;
+  --color-action: #0b63c9;
+  --color-brand: #047ffc;
+  --color-slate: #4d5b69;
+  --color-mint: #53ecb5;
+  --color-paper: #f4f7fa;
+  --color-line: #d9e2ea;
+
+  --font-serif: var(--font-crimson), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

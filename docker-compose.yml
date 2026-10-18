@@ -1,0 +1,22 @@
+name: tsd-systems-site
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: tsd
+      POSTGRES_PASSWORD: tsd_dev_password
+      POSTGRES_DB: tsd_site
+    ports:
+      - "127.0.0.1:5435:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tsd -d tsd_site"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:

@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum SolutionStatus {
+  AVAILABLE
+  COMING_SOON
+}
+
+// Comptes qui accèdent à l'administration (étape 10)
+model AdminUser {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+// Textes, coordonnées et réseaux modifiables, en version FR et EN
+model Setting {
+  key     String @id
+  valueFr String @default("") @db.Text
+  valueEn String @default("") @db.Text
+}
+
+model Solution {
+  id            Int            @id @default(autoincrement())
+  slug          String         @unique
+  name          String
+  taglineFr     String         @default("")
+  taglineEn     String         @default("")
+  descriptionFr String         @default("") @db.Text
+  descriptionEn String         @default("") @db.Text
+  status        SolutionStatus @default(COMING_SOON)
+  logoUrl       String?
+  imageUrl      String?
+  appUrl        String?
+  position      Int            @default(0)
+  published     Boolean        @default(true)
+}
+
+model TeamMember {
+  id        Int     @id @default(autoincrement())
+  name      String
+  roleFr    String  @default("")
+  roleEn    String  @default("")
+  bioFr     String  @default("") @db.Text
+  bioEn     String  @default("") @db.Text
+  photoUrl  String?
+  position  Int     @default(0)
+  published Boolean @default(true)
+}
+
+model ContactMessage {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  body      String   @db.Text
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
