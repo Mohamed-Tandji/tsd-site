@@ -29,3 +29,12 @@ export const solutions: SolutionInfo[] = [
   { slug: "stockautoplus", name: "StockAutoPlus", status: "AVAILABLE", logo: "/solutions/stockautoplus.svg" },
   { slug: "fasolink", name: "FasoLink", status: "COMING_SOON", logo: "/solutions/fasolink.svg" },
 ];
+
+export type TeamMemberInfo = { slug: string; name: string; photo: string };
+
+// Fonctions FR/EN : messages/*.json, clé team.members.<slug>.role
+export const team: TeamMemberInfo[] = [
+  { slug: "mahamadou-tandjigora", name: "Mahamadou Tandjigora", photo: "/equipe/mahamadou-tandjigora.jpg" },
+  { slug: "alassane-sanogo", name: "Alassane Sanogo", photo: "/equipe/alassane-sanogo.jpg" },
+  { slug: "ibrahima-diallo", name: "Ibrahima Diallo", photo: "/equipe/ibrahima-diallo.jpg" },
+];

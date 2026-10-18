@@ -43,18 +43,6 @@
     }
   },
   "pages": {
-    "solutions": {
-      "title": "Nos solutions"
-    },
-    "solution": {
-      "title": "Fiche solution"
-    },
-    "about": {
-      "title": "À propos"
-    },
-    "team": {
-      "title": "L’équipe"
-    },
     "contact": {
       "title": "Contact"
     },
@@ -154,5 +142,52 @@
     "featuresTitle": "Ce que la solution apporte",
     "ctaTitle": "{name} vous intéresse ?",
     "ctaText": "Écrivez-nous : nous vous présentons la solution et répondons à vos questions."
+  },
+  "about": {
+    "eyebrow": "À propos",
+    "title": "Des solutions numériques au service des organisations",
+    "intro": "TSD Systems conçoit et commercialise des solutions numériques pour les établissements scolaires, les commerces et les filières agricoles.",
+    "missionTitle": "Notre mission",
+    "mission1": "Donner aux organisations des outils simples et fiables pour gérer leur activité au quotidien : moins de papier, moins de fichiers dispersés, des informations à jour et partagées.",
+    "mission2": "Nos solutions s’adressent à des équipes qui ont peu de temps à consacrer à l’informatique : elles doivent être claires dès la première utilisation.",
+    "valuesTitle": "Nos principes",
+    "values": {
+      "clarity": {
+        "title": "Clarté",
+        "text": "Des écrans lisibles, des mots simples, des explications compréhensibles par tous."
+      },
+      "reliability": {
+        "title": "Fiabilité",
+        "text": "Des outils sur lesquels on peut compter au quotidien, avec des données traitées avec soin."
+      },
+      "listening": {
+        "title": "Écoute",
+        "text": "Les besoins exprimés par les utilisateurs guident l’évolution de chaque solution."
+      },
+      "transparency": {
+        "title": "Transparence",
+        "text": "Des engagements clairs et une relation directe avec les fondateurs."
+      }
+    },
+    "nameTitle": "TSD : trois initiales, trois fondateurs",
+    "nameText": "Le nom TSD Systems vient des initiales de ses trois fondateurs : Tandjigora, Sanogo et Diallo.",
+    "teamLink": "Découvrir l’équipe"
+  },
+  "team": {
+    "eyebrow": "Équipe",
+    "title": "Les fondateurs",
+    "intro": "TSD Systems a été fondée par trois associés. Les initiales de leurs noms forment celui de l’entreprise.",
+    "photoAlt": "Portrait de {name}",
+    "members": {
+      "mahamadou-tandjigora": {
+        "role": "Cofondateur"
+      },
+      "alassane-sanogo": {
+        "role": "Cofondateur"
+      },
+      "ibrahima-diallo": {
+        "role": "Cofondateur"
+      }
+    }
   }
 }

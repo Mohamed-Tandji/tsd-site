@@ -43,18 +43,6 @@
     }
   },
   "pages": {
-    "solutions": {
-      "title": "Our solutions"
-    },
-    "solution": {
-      "title": "Solution details"
-    },
-    "about": {
-      "title": "About"
-    },
-    "team": {
-      "title": "The team"
-    },
     "contact": {
       "title": "Contact"
     },
@@ -154,5 +142,52 @@
     "featuresTitle": "What the solution brings",
     "ctaTitle": "Interested in {name}?",
     "ctaText": "Write to us: we will present the solution and answer your questions."
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Digital solutions that serve organisations",
+    "intro": "TSD Systems designs and sells digital solutions for schools, businesses and agricultural value chains.",
+    "missionTitle": "Our mission",
+    "mission1": "Give organisations simple, reliable tools to run their day-to-day activity: less paper, fewer scattered files, up-to-date and shared information.",
+    "mission2": "Our solutions are built for teams with little time to spend on IT: they must be clear from the very first use.",
+    "valuesTitle": "Our principles",
+    "values": {
+      "clarity": {
+        "title": "Clarity",
+        "text": "Readable screens, plain words, explanations everyone can understand."
+      },
+      "reliability": {
+        "title": "Reliability",
+        "text": "Tools you can count on every day, with data handled with care."
+      },
+      "listening": {
+        "title": "Listening",
+        "text": "The needs expressed by users guide how each solution evolves."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "text": "Clear commitments and a direct relationship with the founders."
+      }
+    },
+    "nameTitle": "TSD: three initials, three founders",
+    "nameText": "The name TSD Systems comes from the initials of its three founders: Tandjigora, Sanogo and Diallo.",
+    "teamLink": "Meet the team"
+  },
+  "team": {
+    "eyebrow": "Team",
+    "title": "The founders",
+    "intro": "TSD Systems was founded by three partners. The initials of their names make up the company’s name.",
+    "photoAlt": "Portrait of {name}",
+    "members": {
+      "mahamadou-tandjigora": {
+        "role": "Co-founder"
+      },
+      "alassane-sanogo": {
+        "role": "Co-founder"
+      },
+      "ibrahima-diallo": {
+        "role": "Co-founder"
+      }
+    }
   }
 }

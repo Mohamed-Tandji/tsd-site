@@ -13,9 +13,11 @@ export function buttonClass(variant: ButtonVariant = "primary", size: "md" | "sm
   return `inline-block rounded border-2 font-semibold leading-normal no-underline transition-colors duration-150 ${sizing} ${BUTTON_VARIANTS[variant]}`;
 }
 
-export function SectionHeading({ title, text }: { title: string; text?: string }) {
+export function SectionHeading({ title, text, tight = false }: { title: string; text?: string; tight?: boolean }) {
   return (
-    <div className="mb-12 max-w-[620px] after:mt-4 after:block after:h-[3px] after:w-12 after:bg-mint after:content-[''] nav:mb-[72px]">
+    <div
+      className={`max-w-[620px] after:mt-4 after:block after:h-[3px] after:w-12 after:bg-mint after:content-[''] ${tight ? "mb-6" : "mb-12 nav:mb-[72px]"}`}
+    >
       <h2 className="text-[clamp(2rem,3.6vw,2.7rem)]">{title}</h2>
       {text && <p className="mt-4 text-slate">{text}</p>}
     </div>
