@@ -8,7 +8,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const c = await getTranslations({ locale, namespace: "common" });
 
   return (
-    <main className="mx-auto max-w-[1120px] px-6 py-24">
+    <div className="mx-auto max-w-[1120px] px-6 py-24">
       <p className="text-sm font-semibold uppercase tracking-widest text-action">{c("step")}</p>
       <h1 className="mt-4 max-w-2xl font-serif text-6xl font-bold leading-[1.05]">{t("title")}</h1>
       <p className="mt-6 max-w-xl text-lg text-slate">{t("subtitle")}</p>
@@ -18,6 +18,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       >
         {t("cta")}
       </Link>
-    </main>
+    </div>
   );
 }
