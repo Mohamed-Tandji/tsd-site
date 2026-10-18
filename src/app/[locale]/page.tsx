@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import bandeau from "@/assets/accueil-bandeau.jpg";
+import CtaBand from "@/components/CtaBand";
 import SolutionCard from "@/components/SolutionCard";
 import { buttonClass, SectionHeading } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
@@ -92,16 +93,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* Appel à l'action */}
-      <section className="bg-navy py-[88px] text-center text-white nav:py-[120px]">
-        <div className="mx-auto max-w-[1120px] px-6">
-          <h2 className="mb-4 text-[clamp(2rem,3.6vw,2.9rem)]">{t("ctaTitle")}</h2>
-          <p className="mx-auto mb-9 max-w-[460px] text-footer">{t("ctaText")}</p>
-          <Link href="/contact" className={buttonClass("white")}>
-            {t("ctaContact")}
-          </Link>
-        </div>
-      </section>
+      <CtaBand />
     </>
   );
 }

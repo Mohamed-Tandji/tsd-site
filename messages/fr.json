@@ -40,9 +40,7 @@
         "title": "Fait pour durer",
         "text": "Des bases techniques solides et maintenables, pour accompagner la croissance de votre activité."
       }
-    },
-    "ctaTitle": "Un projet en tête ?",
-    "ctaText": "Parlez-nous de votre besoin : nous vous répondons rapidement."
+    }
   },
   "pages": {
     "solutions": {
@@ -98,16 +96,63 @@
     "items": {
       "kalanso-kunafoni": {
         "category": "Gestion scolaire",
-        "summary": "Plateforme tout-en-un pour gérer l’administration, la pédagogie et les finances d’un établissement scolaire."
+        "summary": "Plateforme tout-en-un pour gérer l’administration, la pédagogie et les finances d’un établissement scolaire.",
+        "description": "Kalanso Kunafoni réunit dans une seule plateforme la gestion administrative, le suivi pédagogique et la gestion financière d’un établissement scolaire. La direction, le secrétariat et les enseignants travaillent sur les mêmes informations, à jour, sans multiplier les registres et les fichiers.",
+        "features": {
+          "a": {
+            "title": "Administration",
+            "text": "Les dossiers des élèves et l’organisation de l’établissement, regroupés au même endroit."
+          },
+          "b": {
+            "title": "Pédagogie",
+            "text": "Le suivi des classes et des résultats des élèves, partagé avec l’équipe enseignante."
+          },
+          "c": {
+            "title": "Finances",
+            "text": "Le suivi des frais de scolarité et des paiements, pour une vision claire des finances."
+          }
+        }
       },
       "stockautoplus": {
         "category": "Gestion de stock",
-        "summary": "Application de gestion de stock pour suivre les produits, les entrées et les sorties."
+        "summary": "Application de gestion de stock pour suivre les produits, les entrées et les sorties.",
+        "description": "StockAutoPlus automatise la gestion du stock : chaque entrée et chaque sortie est enregistrée, et le niveau de stock de chaque produit est connu à tout moment. Les commerces et les entrepôts gagnent du temps et limitent les écarts d’inventaire.",
+        "features": {
+          "a": {
+            "title": "Produits",
+            "text": "Un catalogue des produits avec leur quantité disponible."
+          },
+          "b": {
+            "title": "Entrées et sorties",
+            "text": "Chaque mouvement est enregistré et le stock se met à jour automatiquement."
+          },
+          "c": {
+            "title": "Suivi",
+            "text": "Une vue claire de l’état du stock pour décider plus vite."
+          }
+        }
       },
       "fasolink": {
         "category": "Plateforme agro-industrielle",
         "summary": "Plateforme qui relie les coopératives de producteurs, les intermédiaires et les industries agricoles du Mali."
       }
     }
+  },
+  "cta": {
+    "title": "Un projet en tête ?",
+    "text": "Parlez-nous de votre besoin : nous vous répondons rapidement.",
+    "button": "Nous contacter"
+  },
+  "solutionsPage": {
+    "eyebrow": "Solutions",
+    "title": "Nos solutions",
+    "intro": "Des applications de gestion conçues pour les établissements scolaires, les commerces et les filières agricoles."
+  },
+  "solutionPage": {
+    "back": "Toutes les solutions",
+    "contact": "Nous contacter",
+    "featuresTitle": "Ce que la solution apporte",
+    "ctaTitle": "{name} vous intéresse ?",
+    "ctaText": "Écrivez-nous : nous vous présentons la solution et répondons à vos questions."
   }
 }
