@@ -1,7 +1,7 @@
 # Plan – Site TSD Systems
 
 - [x] Démarrage : prérequis, dépôt git, PLAN.md
-- [ ] 4. Socle technique : Next.js/TS/Tailwind/next-intl, Docker + PostgreSQL, Prisma, pages vides FR/EN, /api/health
+- [x] 4. Socle technique : Next.js/TS/Tailwind/next-intl, Docker + PostgreSQL, Prisma, pages vides FR/EN, /api/health
 - [ ] 5. Structure : en-tête (logo, menu actif, bascule FR/EN, menu mobile), pied de page, gabarit commun
 - [ ] 6. Accueil (fidèle à la maquette)
 - [ ] 7. Solutions et fiches solution
