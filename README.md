@@ -3,7 +3,7 @@
 Next.js 15 (React, TypeScript) · Tailwind CSS 4 · next-intl (FR/EN) · Prisma + PostgreSQL (Docker)
 
 ## Lancer en local (PowerShell)
-Prérequis : Node 20+, Docker Desktop démarré. Placez le dossier **hors OneDrive** (ex. `C:\dev\tsd-site`).
+Prérequis : Node 20+, Docker Desktop démarré. PostgreSQL écoute sur le port 5435. Placez le dossier **hors OneDrive** (ex. `C:\dev\tsd-site`).
 
 ```powershell
 copy .env.example .env
@@ -18,7 +18,8 @@ npm run dev
 2. Chaque lien du menu ouvre une page **à part** avec sa propre adresse :
    `/fr`, `/fr/solutions`, `/fr/solutions/exemple`, `/fr/a-propos`, `/fr/equipe`, `/fr/contact`,
    `/fr/mentions-legales`, `/fr/confidentialite`
-3. Le bouton FR → EN change de langue et reste sur la même page (`/en/solutions`, etc.)
+3. Le bouton FR → EN change de langue et reste sur la même page ; en anglais les chemins sont traduits :
+   `/en/about`, `/en/team`, `/en/legal-notice`, `/en/privacy` (`/en/solutions`, `/en/contact` inchangés)
 4. http://localhost:3000/api/health affiche `{"ok":true,...}` (base de données connectée)
 5. `npx prisma studio` ouvre la base : 5 tables vides (AdminUser, Setting, Solution, TeamMember, ContactMessage)
 
