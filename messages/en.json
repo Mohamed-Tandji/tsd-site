@@ -77,51 +77,7 @@
     "comingSoon": "Coming soon",
     "discover": "Discover",
     "discoverName": "Discover {name}",
-    "logoAlt": "{name} logo",
-    "items": {
-      "kalanso-kunafoni": {
-        "category": "School management",
-        "summary": "All-in-one platform to manage the administration, teaching and finances of a school.",
-        "description": "Kalanso Kunafoni brings together a school’s administration, teaching follow-up and financial management in a single platform. Management, office staff and teachers work from the same up-to-date information, without multiplying registers and files.",
-        "features": {
-          "a": {
-            "title": "Administration",
-            "text": "Student records and school organisation, gathered in one place."
-          },
-          "b": {
-            "title": "Teaching",
-            "text": "Class and student results follow-up, shared with the teaching team."
-          },
-          "c": {
-            "title": "Finances",
-            "text": "Tracking of school fees and payments, for a clear view of the finances."
-          }
-        }
-      },
-      "stockautoplus": {
-        "category": "Stock management",
-        "summary": "Stock management application to track products, incoming and outgoing goods.",
-        "description": "StockAutoPlus automates stock management: every incoming and outgoing movement is recorded, and the stock level of each product is known at all times. Businesses and warehouses save time and reduce inventory discrepancies.",
-        "features": {
-          "a": {
-            "title": "Products",
-            "text": "A product catalogue with available quantities."
-          },
-          "b": {
-            "title": "Incoming and outgoing goods",
-            "text": "Every movement is recorded and stock is updated automatically."
-          },
-          "c": {
-            "title": "Monitoring",
-            "text": "A clear view of stock status to decide faster."
-          }
-        }
-      },
-      "fasolink": {
-        "category": "Agro-industrial platform",
-        "summary": "Platform connecting producer cooperatives, intermediaries and agro-industries in Mali."
-      }
-    }
+    "logoAlt": "{name} logo"
   },
   "cta": {
     "title": "Have a project in mind?",
@@ -138,7 +94,10 @@
     "contact": "Contact us",
     "featuresTitle": "What the solution brings",
     "ctaTitle": "Interested in {name}?",
-    "ctaText": "Write to us: we will present the solution and answer your questions."
+    "ctaText": "Write to us: we will present the solution and answer your questions.",
+    "openApp": "Open the application",
+    "newTab": "opens in a new tab",
+    "imageAlt": "Preview of {name}"
   },
   "about": {
     "eyebrow": "About",
@@ -174,18 +133,7 @@
     "eyebrow": "Team",
     "title": "The founders",
     "intro": "TSD Systems was founded by three partners. The initials of their names make up the company’s name.",
-    "photoAlt": "Portrait of {name}",
-    "members": {
-      "mahamadou-tandjigora": {
-        "role": "Co-founder"
-      },
-      "alassane-sanogo": {
-        "role": "Co-founder"
-      },
-      "ibrahima-diallo": {
-        "role": "Co-founder"
-      }
-    }
+    "photoAlt": "Portrait of {name}"
   },
   "contact": {
     "eyebrow": "Contact",

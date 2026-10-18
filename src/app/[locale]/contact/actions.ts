@@ -1,8 +1,9 @@
 "use server";
 
 import { headers } from "next/headers";
-import { contactSchema, type ContactField, hashIp, isRateLimited, MIN_FILL_MS, notifyByEmail } from "@/lib/contact";
+import { contactSchema, type ContactField, isRateLimited, MIN_FILL_MS, notifyByEmail } from "@/lib/contact";
 import { db } from "@/lib/db";
+import { clientIp, hashIp } from "@/lib/security";
 
 export type ContactState = {
   status: "idle" | "success" | "error";
@@ -34,9 +35,7 @@ export async function sendContact(_prev: ContactState, formData: FormData): Prom
     return { status: "error", fieldErrors, values };
   }
 
-  const h = await headers();
-  const ip = h.get("x-forwarded-for")?.split(",")[0]?.trim() || h.get("x-real-ip") || "inconnue";
-  const ipHash = hashIp(ip);
+  const ipHash = hashIp(clientIp(await headers()));
   const locale = formData.get("locale") === "en" ? "en" : "fr";
 
   try {

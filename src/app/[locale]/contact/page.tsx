@@ -2,12 +2,13 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import ContactForm from "@/components/ContactForm";
 import { MailIcon, PhoneIcon } from "@/components/icons";
 import PageHeader from "@/components/PageHeader";
-import { contact } from "@/lib/site";
+import { getSiteSettings } from "@/lib/content";
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "contact" });
+  const contact = await getSiteSettings();
 
   return (
     <>

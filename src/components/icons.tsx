@@ -1,4 +1,4 @@
-import type { SocialKey } from "@/lib/site";
+import type { SocialKey } from "@/lib/defaults";
 
 // Icônes reprises de la maquette (décoratives : aria-hidden)
 type IconProps = { size?: number; className?: string };

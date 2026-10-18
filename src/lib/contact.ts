@@ -1,4 +1,3 @@
-import { createHash } from "node:crypto";
 import { z } from "zod";
 import { db } from "@/lib/db";
 
@@ -14,12 +13,6 @@ export type ContactField = keyof z.infer<typeof contactSchema>;
 export const RATE_LIMIT = { max: 5, windowMs: 60 * 60 * 1000 }; // 5 envois par heure et par IP
 export const MIN_FILL_MS = 2000; // un humain met plus de 2 s à remplir le formulaire
 const DAILY_EMAIL_CAP = 100; // offre gratuite Resend : 100 courriels par jour
-
-export function hashIp(ip: string) {
-  return createHash("sha256")
-    .update(`${process.env.IP_HASH_SALT ?? ""}:${ip}`)
-    .digest("hex");
-}
 
 export async function isRateLimited(ipHash: string) {
   const since = new Date(Date.now() - RATE_LIMIT.windowMs);
