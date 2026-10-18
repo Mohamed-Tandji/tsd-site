@@ -1,23 +1,107 @@
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import bandeau from "@/assets/accueil-bandeau.jpg";
+import SolutionCard from "@/components/SolutionCard";
+import { buttonClass, SectionHeading } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
+import { solutions } from "@/lib/site";
+
+const AUDIENCES = ["schools", "businesses", "agriculture"] as const;
+const PRINCIPLES = ["simple", "users", "lasting"] as const;
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "home" });
-  const c = await getTranslations({ locale, namespace: "common" });
 
   return (
-    <div className="mx-auto max-w-[1120px] px-6 py-24">
-      <p className="text-sm font-semibold uppercase tracking-widest text-action">{c("step")}</p>
-      <h1 className="mt-4 max-w-2xl font-serif text-6xl font-bold leading-[1.05]">{t("title")}</h1>
-      <p className="mt-6 max-w-xl text-lg text-slate">{t("subtitle")}</p>
-      <Link
-        href="/solutions"
-        className="mt-10 inline-block rounded bg-action px-6 py-3 font-semibold text-white hover:opacity-90"
-      >
-        {t("cta")}
-      </Link>
-    </div>
+    <>
+      {/* Bandeau : photo à droite fondue vers le blanc (en haut, fondue vers le bas, sous 900 px) */}
+      <section className="relative overflow-hidden nav:flex nav:min-h-[720px] nav:items-center">
+        <div
+          aria-hidden="true"
+          className="relative h-[300px] w-full [mask-image:linear-gradient(180deg,#000_55%,transparent)] nav:absolute nav:inset-y-0 nav:right-0 nav:h-auto nav:w-[48%] nav:[mask-image:linear-gradient(90deg,transparent_0,#000_48%)]"
+        >
+          <Image
+            src={bandeau}
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 900px) 100vw, 48vw"
+            quality={75}
+            className="object-cover object-[62%_55%]"
+          />
+        </div>
+        <div className="relative z-[1] mx-auto w-full max-w-[1120px] px-6">
+          <div className="max-w-[560px] pb-20 nav:py-32">
+            <p className="flex items-center gap-3.5 text-[13px] leading-none font-semibold tracking-[0.12em] text-action uppercase before:h-[3px] before:w-10 before:bg-mint before:content-['']">
+              TSD Systems
+            </p>
+            <h1 className="mt-7 mb-[30px] text-[clamp(2.6rem,4.8vw,4.3rem)] tracking-[-0.01em]">{t("title")}</h1>
+            <p className="mb-[46px] max-w-[480px] text-[1.18rem] text-slate">{t("subtitle")}</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/solutions" className={buttonClass("primary")}>
+                {t("ctaSolutions")}
+              </Link>
+              <Link href="/contact" className={`${buttonClass("outline")} bg-white`}>
+                {t("ctaContact")}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Publics visés */}
+      <div className="border-y border-line">
+        <ul className="mx-auto grid max-w-[1120px] grid-cols-1 px-6 xs:grid-cols-3">
+          {AUDIENCES.map((key, i) => (
+            <li
+              key={key}
+              className={`px-4 py-[30px] text-center text-[15px] leading-normal font-medium ${i > 0 ? "border-t border-line xs:border-t-0 xs:border-l" : ""}`}
+            >
+              {t(`audiences.${key}`)}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Solutions */}
+      <section className="py-[88px] nav:py-[136px]">
+        <div className="mx-auto max-w-[1120px] px-6">
+          <SectionHeading title={t("solutionsTitle")} text={t("solutionsText")} />
+          <div className="grid grid-cols-1 gap-9 nav:grid-cols-3">
+            {solutions.map((s) => (
+              <SolutionCard key={s.slug} solution={s} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Approche */}
+      <section className="border-t border-line py-[88px] nav:py-[136px]">
+        <div className="mx-auto max-w-[1120px] px-6">
+          <SectionHeading title={t("approachTitle")} />
+          <div className="grid grid-cols-1 gap-10 nav:grid-cols-3 nav:gap-16">
+            {PRINCIPLES.map((key) => (
+              <div key={key} className="border-t-[3px] border-mint pt-5">
+                <h3 className="mb-2 text-[1.45rem]">{t(`principles.${key}.title`)}</h3>
+                <p className="text-slate">{t(`principles.${key}.text`)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Appel à l'action */}
+      <section className="bg-navy py-[88px] text-center text-white nav:py-[120px]">
+        <div className="mx-auto max-w-[1120px] px-6">
+          <h2 className="mb-4 text-[clamp(2rem,3.6vw,2.9rem)]">{t("ctaTitle")}</h2>
+          <p className="mx-auto mb-9 max-w-[460px] text-footer">{t("ctaText")}</p>
+          <Link href="/contact" className={buttonClass("white")}>
+            {t("ctaContact")}
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }

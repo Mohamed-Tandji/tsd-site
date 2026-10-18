@@ -17,7 +17,32 @@
   "home": {
     "title": "Digital solutions that connect.",
     "subtitle": "Management applications for schools, businesses and agricultural value chains.",
-    "cta": "Discover our solutions"
+    "ctaSolutions": "Discover our solutions",
+    "ctaContact": "Contact us",
+    "audiences": {
+      "schools": "Schools",
+      "businesses": "Businesses and warehouses",
+      "agriculture": "Cooperatives and agricultural value chains"
+    },
+    "solutionsTitle": "Our solutions",
+    "solutionsText": "Clear tools to replace paper and scattered files.",
+    "approachTitle": "Our approach",
+    "principles": {
+      "simple": {
+        "title": "Simple to adopt",
+        "text": "Clear interfaces designed for teams with little time to train."
+      },
+      "users": {
+        "title": "Built with its users",
+        "text": "Each solution evolves from field feedback, not assumptions."
+      },
+      "lasting": {
+        "title": "Built to last",
+        "text": "Solid, maintainable technical foundations to support your growth."
+      }
+    },
+    "ctaTitle": "Have a project in mind?",
+    "ctaText": "Tell us what you need: we reply quickly."
   },
   "pages": {
     "solutions": {
@@ -63,5 +88,26 @@
     "legal": "Legal notice",
     "privacy": "Privacy",
     "rights": "© {year} TSD Systems. All rights reserved."
+  },
+  "catalog": {
+    "available": "Available",
+    "comingSoon": "Coming soon",
+    "discover": "Discover",
+    "discoverName": "Discover {name}",
+    "logoAlt": "{name} logo",
+    "items": {
+      "kalanso-kunafoni": {
+        "category": "School management",
+        "summary": "All-in-one platform to manage the administration, teaching and finances of a school."
+      },
+      "stockautoplus": {
+        "category": "Stock management",
+        "summary": "Stock management application to track products, incoming and outgoing goods."
+      },
+      "fasolink": {
+        "category": "Agro-industrial platform",
+        "summary": "Platform connecting producer cooperatives, intermediaries and agro-industries in Mali."
+      }
+    }
   }
 }

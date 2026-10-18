@@ -21,8 +21,11 @@ export const socials: { key: SocialKey; label: string; handle: string; url: stri
   { key: "whatsapp", label: "WhatsApp", handle: "tsdsystems_whatsapp", url: "" },
 ];
 
-export const solutions: { slug: string; name: string; status: "AVAILABLE" | "COMING_SOON" }[] = [
-  { slug: "kalanso-kunafoni", name: "Kalanso Kunafoni", status: "AVAILABLE" },
-  { slug: "stockautoplus", name: "StockAutoPlus", status: "AVAILABLE" },
-  { slug: "fasolink", name: "FasoLink", status: "COMING_SOON" },
+export type SolutionInfo = { slug: string; name: string; status: "AVAILABLE" | "COMING_SOON"; logo: string };
+
+// Textes FR/EN (catégorie, résumé) : messages/*.json, clé catalog.items.<slug>
+export const solutions: SolutionInfo[] = [
+  { slug: "kalanso-kunafoni", name: "Kalanso Kunafoni", status: "AVAILABLE", logo: "/solutions/kalanso-kunafoni.svg" },
+  { slug: "stockautoplus", name: "StockAutoPlus", status: "AVAILABLE", logo: "/solutions/stockautoplus.svg" },
+  { slug: "fasolink", name: "FasoLink", status: "COMING_SOON", logo: "/solutions/fasolink.svg" },
 ];
