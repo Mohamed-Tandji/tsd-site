@@ -1,0 +1,28 @@
+# Caddy : certificats HTTPS automatiques (Let's Encrypt), compression, en-têtes de sécurité
+{
+	email {$ACME_EMAIL}
+}
+
+www.{$SITE_DOMAIN} {
+	redir https://{$SITE_DOMAIN}{uri} permanent
+}
+
+{$SITE_DOMAIN} {
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+		-Server
+	}
+
+	# Images téléversées : 5 Mo par fichier, 25 Mo au plus par formulaire d’administration
+	request_body {
+		max_size 30MB
+	}
+
+	reverse_proxy app:3000
+}

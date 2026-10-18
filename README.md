@@ -1,6 +1,6 @@
 # Site TSD Systems
 
-Next.js 15 (React, TypeScript) · Tailwind CSS 4 · next-intl (FR/EN) · Prisma + PostgreSQL (Docker)
+Next.js 15 (React, TypeScript) · Tailwind CSS 4 · next-intl (FR/EN) · Prisma + PostgreSQL · Docker Compose + Caddy
 
 ## Lancer en local (PowerShell)
 Prérequis : Node 20+, Docker Desktop démarré. PostgreSQL écoute sur le port 5435. Placez le dossier **hors OneDrive** (ex. `C:\dev\tsd-site`).
@@ -9,7 +9,7 @@ Prérequis : Node 20+, Docker Desktop démarré. PostgreSQL écoute sur le port 
 copy .env.example .env
 docker compose up -d
 npm install
-npx prisma db push
+npx prisma migrate deploy
 npx prisma db seed   # contenu initial FR/EN + premier compte admin (SEED_ADMIN_* dans .env)
 npm run dev
 ```
@@ -33,3 +33,11 @@ Les images téléversées sont enregistrées dans `uploads/` (variable `UPLOAD_D
 - `prisma/schema.prisma` : modèle de données ; `prisma/seed.ts` + `seed-data.json` : contenu initial
 - `src/app/admin` : administration ; `src/lib/content.ts` : lecture du contenu public (cache invalidé à chaque enregistrement)
 - `src/app/globals.css` : couleurs et polices de la charte
+
+## Production
+
+- `Dockerfile`, `docker-compose.prod.yml` (app + PostgreSQL + Caddy + sauvegardes), `Caddyfile`, `.env.production.example`
+- Guide pas à pas : `docs/DEPLOIEMENT.md` ; sauvegardes et restauration : `docs/SAUVEGARDES.md`
+- Vérification : `./scripts/verifier-production.sh tsdsystems.net`
+- Schéma de base : migrations Prisma (`prisma/migrations`). Après une modification de `schema.prisma` :
+  `npx prisma migrate dev --name <description>` (en local), puis `migrate deploy` en production (service `tools`).

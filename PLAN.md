@@ -9,4 +9,5 @@
 - [x] 9. Contact : formulaire, validation, antispam, base, Resend
 - [x] 10. Administration (/admin) : connexion, comptes, contenus FR/EN, médias, solutions, équipe, messages, seed
 - [x] 11. Finitions : SEO, accessibilité, performance, pages légales, sauvegardes
-- [ ] 12. Mise en ligne : Dockerfile, compose prod (app + PostgreSQL + Caddy), guide VPS, vérification
+- [x] 12. Mise en ligne : Dockerfile, compose prod (app + PostgreSQL + Caddy), guide VPS, script de vérification (pile testée en local)
+- [ ] Déploiement réel sur le VPS et vérification en production (suivre docs/DEPLOIEMENT.md)
