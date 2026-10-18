@@ -1,0 +1,124 @@
+{
+  "solutions": [
+    {
+      "slug": "kalanso-kunafoni",
+      "name": "Kalanso Kunafoni",
+      "status": "AVAILABLE",
+      "logoUrl": "/solutions/kalanso-kunafoni.svg",
+      "position": 1,
+      "taglineFr": "Gestion scolaire",
+      "taglineEn": "School management",
+      "summaryFr": "Plateforme tout-en-un pour gérer l’administration, la pédagogie et les finances d’un établissement scolaire.",
+      "summaryEn": "All-in-one platform to manage the administration, teaching and finances of a school.",
+      "descriptionFr": "Kalanso Kunafoni réunit dans une seule plateforme la gestion administrative, le suivi pédagogique et la gestion financière d’un établissement scolaire. La direction, le secrétariat et les enseignants travaillent sur les mêmes informations, à jour, sans multiplier les registres et les fichiers.",
+      "descriptionEn": "Kalanso Kunafoni brings together a school’s administration, teaching follow-up and financial management in a single platform. Management, office staff and teachers work from the same up-to-date information, without multiplying registers and files.",
+      "featuresFr": [
+        {
+          "title": "Administration",
+          "text": "Les dossiers des élèves et l’organisation de l’établissement, regroupés au même endroit."
+        },
+        {
+          "title": "Pédagogie",
+          "text": "Le suivi des classes et des résultats des élèves, partagé avec l’équipe enseignante."
+        },
+        {
+          "title": "Finances",
+          "text": "Le suivi des frais de scolarité et des paiements, pour une vision claire des finances."
+        }
+      ],
+      "featuresEn": [
+        {
+          "title": "Administration",
+          "text": "Student records and school organisation, gathered in one place."
+        },
+        {
+          "title": "Teaching",
+          "text": "Class and student results follow-up, shared with the teaching team."
+        },
+        {
+          "title": "Finances",
+          "text": "Tracking of school fees and payments, for a clear view of the finances."
+        }
+      ]
+    },
+    {
+      "slug": "stockautoplus",
+      "name": "StockAutoPlus",
+      "status": "AVAILABLE",
+      "logoUrl": "/solutions/stockautoplus.svg",
+      "position": 2,
+      "taglineFr": "Gestion de stock",
+      "taglineEn": "Stock management",
+      "summaryFr": "Application de gestion de stock pour suivre les produits, les entrées et les sorties.",
+      "summaryEn": "Stock management application to track products, incoming and outgoing goods.",
+      "descriptionFr": "StockAutoPlus automatise la gestion du stock : chaque entrée et chaque sortie est enregistrée, et le niveau de stock de chaque produit est connu à tout moment. Les commerces et les entrepôts gagnent du temps et limitent les écarts d’inventaire.",
+      "descriptionEn": "StockAutoPlus automates stock management: every incoming and outgoing movement is recorded, and the stock level of each product is known at all times. Businesses and warehouses save time and reduce inventory discrepancies.",
+      "featuresFr": [
+        {
+          "title": "Produits",
+          "text": "Un catalogue des produits avec leur quantité disponible."
+        },
+        {
+          "title": "Entrées et sorties",
+          "text": "Chaque mouvement est enregistré et le stock se met à jour automatiquement."
+        },
+        {
+          "title": "Suivi",
+          "text": "Une vue claire de l’état du stock pour décider plus vite."
+        }
+      ],
+      "featuresEn": [
+        {
+          "title": "Products",
+          "text": "A product catalogue with available quantities."
+        },
+        {
+          "title": "Incoming and outgoing goods",
+          "text": "Every movement is recorded and stock is updated automatically."
+        },
+        {
+          "title": "Monitoring",
+          "text": "A clear view of stock status to decide faster."
+        }
+      ]
+    },
+    {
+      "slug": "fasolink",
+      "name": "FasoLink",
+      "status": "COMING_SOON",
+      "logoUrl": "/solutions/fasolink.svg",
+      "position": 3,
+      "taglineFr": "Plateforme agro-industrielle",
+      "taglineEn": "Agro-industrial platform",
+      "summaryFr": "Plateforme qui relie les coopératives de producteurs, les intermédiaires et les industries agricoles du Mali.",
+      "summaryEn": "Platform connecting producer cooperatives, intermediaries and agro-industries in Mali.",
+      "descriptionFr": "",
+      "descriptionEn": "",
+      "featuresFr": [],
+      "featuresEn": []
+    }
+  ],
+  "team": [
+    {
+      "name": "Mahamadou Tandjigora",
+      "position": 1,
+      "roleFr": "Cofondateur",
+      "roleEn": "Co-founder",
+      "photoUrl": "/equipe/mahamadou-tandjigora.jpg"
+    },
+    {
+      "name": "Alassane Sanogo",
+      "position": 2,
+      "roleFr": "Cofondateur",
+      "roleEn": "Co-founder",
+      "photoUrl": "/equipe/alassane-sanogo.jpg"
+    },
+    {
+      "name": "Ibrahima Diallo",
+      "position": 3,
+      "roleFr": "Cofondateur",
+      "roleEn": "Co-founder",
+      "photoUrl": "/equipe/ibrahima-diallo.jpg"
+    }
+  ]
+}

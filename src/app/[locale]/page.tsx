@@ -5,7 +5,7 @@ import CtaBand from "@/components/CtaBand";
 import SolutionCard from "@/components/SolutionCard";
 import { buttonClass, SectionHeading } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
-import { solutions } from "@/lib/site";
+import { getSiteSettings, getSolutions } from "@/lib/content";
 
 const AUDIENCES = ["schools", "businesses", "agriculture"] as const;
 const PRINCIPLES = ["simple", "users", "lasting"] as const;
@@ -14,6 +14,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "home" });
+  const [{ images }, solutions] = await Promise.all([getSiteSettings(), getSolutions(locale)]);
 
   return (
     <>
@@ -24,7 +25,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           className="relative h-[300px] w-full [mask-image:linear-gradient(180deg,#000_55%,transparent)] nav:absolute nav:inset-y-0 nav:right-0 nav:h-auto nav:w-[48%] nav:[mask-image:linear-gradient(90deg,transparent_0,#000_48%)]"
         >
           <Image
-            src={bandeau}
+            src={images.hero || bandeau}
             alt=""
             fill
             priority

@@ -2,12 +2,13 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import CtaBand from "@/components/CtaBand";
 import PageHeader from "@/components/PageHeader";
 import SolutionCard from "@/components/SolutionCard";
-import { solutions } from "@/lib/site";
+import { getSolutions } from "@/lib/content";
 
 export default async function SolutionsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "solutionsPage" });
+  const solutions = await getSolutions(locale);
 
   return (
     <>

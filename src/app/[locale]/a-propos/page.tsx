@@ -5,6 +5,7 @@ import CtaBand from "@/components/CtaBand";
 import PageHeader from "@/components/PageHeader";
 import { SectionHeading } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
+import { getSiteSettings } from "@/lib/content";
 
 const PRINCIPLES = ["simple", "users", "lasting"] as const;
 const VALUES = ["clarity", "reliability", "listening", "transparency"] as const;
@@ -14,6 +15,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "about" });
   const h = await getTranslations({ locale, namespace: "home" });
+  const { images } = await getSiteSettings();
 
   return (
     <>
@@ -29,7 +31,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </div>
           {/* Photo d'illustration (banque d'images) : décorative, ne représente pas l'équipe */}
           <div className="relative aspect-[3/2] overflow-hidden rounded-md">
-            <Image src={reunion} alt="" fill sizes="(max-width: 900px) 100vw, 520px" className="object-cover" />
+            <Image src={images.about || reunion} alt="" fill sizes="(max-width: 900px) 100vw, 520px" className="object-cover" />
           </div>
         </div>
       </section>

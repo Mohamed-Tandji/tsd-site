@@ -12,16 +12,42 @@ enum SolutionStatus {
   COMING_SOON
 }
 
-// Comptes qui accèdent à l'administration (étape 10)
+// Comptes qui accèdent à l'administration
 model AdminUser {
-  id           Int      @id @default(autoincrement())
-  email        String   @unique
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
   name         String
   passwordHash String
-  createdAt    DateTime @default(now())
+  createdAt    DateTime  @default(now())
+  sessions     Session[]
 }
 
-// Textes, coordonnées et réseaux modifiables, en version FR et EN
+// Sessions d'administration : le cookie contient le jeton, la base n'en garde que l'empreinte
+model Session {
+  id        String    @id // SHA-256 du jeton
+  userId    Int
+  user      AdminUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime  @default(now())
+
+  @@index([userId])
+}
+
+// Tentatives de connexion (limitation des essais)
+model LoginAttempt {
+  id        Int      @id @default(autoincrement())
+  ipHash    String
+  email     String
+  success   Boolean
+  createdAt DateTime @default(now())
+
+  @@index([ipHash, createdAt])
+  @@index([email, createdAt])
+}
+
+// Valeurs modifiables en FR et EN :
+// - "msg.<clé>" : textes des pages (remplacent ceux de messages/*.json)
+// - "contact.*", "social.*", "image.*" : coordonnées, réseaux, logos et photos (valueFr seulement)
 model Setting {
   key     String @id
   valueFr String @default("") @db.Text
@@ -32,13 +58,17 @@ model Solution {
   id            Int            @id @default(autoincrement())
   slug          String         @unique
   name          String
-  taglineFr     String         @default("")
+  taglineFr     String         @default("") // catégorie, ex. « Gestion scolaire »
   taglineEn     String         @default("")
-  descriptionFr String         @default("") @db.Text
+  summaryFr     String         @default("") @db.Text // résumé de la carte
+  summaryEn     String         @default("") @db.Text
+  descriptionFr String         @default("") @db.Text // description de la fiche
   descriptionEn String         @default("") @db.Text
+  featuresFr    Json           @default("[]") // [{ title, text }]
+  featuresEn    Json           @default("[]")
   status        SolutionStatus @default(COMING_SOON)
   logoUrl       String?
-  imageUrl      String?
+  imageUrl      String? // visuel de la fiche (capture d'écran)
   appUrl        String?
   position      Int            @default(0)
   published     Boolean        @default(true)

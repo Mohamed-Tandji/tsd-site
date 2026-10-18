@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { MailIcon, PhoneIcon, SocialIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
-import { contact, socials, solutions } from "@/lib/site";
+import { getSiteSettings, getSolutions } from "@/lib/content";
 
 const NAV = [
   ["/solutions", "solutions"],
@@ -24,24 +24,26 @@ function ColumnTitle({ children }: { children: React.ReactNode }) {
 export default async function Footer() {
   const t = await getTranslations("footer");
   const n = await getTranslations("nav");
+  const locale = await getLocale();
+  const [{ email, phones, socials, images }, solutions] = await Promise.all([getSiteSettings(), getSolutions(locale)]);
 
   return (
     <footer className="border-t border-footer-line bg-navy pt-16 text-[15.5px] text-footer">
       <div className="mx-auto grid max-w-[1120px] grid-cols-1 gap-12 px-6 pb-16 xs:grid-cols-2 nav:grid-cols-[1.7fr_0.8fr_1fr_1.3fr]">
         <div>
-          <Image src="/brand/logo-tsd-blanc.svg" alt="TSD Systems" width={269} height={54} unoptimized className="mb-3 h-[54px] w-auto" />
+          <Image src={images.logoWhite} alt="TSD Systems" width={269} height={54} unoptimized className="mb-3 h-[54px] w-auto" />
           <h2 className="sr-only">{t("contact")}</h2>
           <ul className="mt-7 grid gap-3">
             <li className="flex items-start gap-2.5">
               <MailIcon className="mt-[3px] flex-none opacity-80" />
-              <a href={`mailto:${contact.email}`} className={`${linkClass} whitespace-nowrap`}>
-                {contact.email}
+              <a href={`mailto:${email}`} className={`${linkClass} whitespace-nowrap`}>
+                {email}
               </a>
             </li>
             <li className="flex items-start gap-2.5">
               <PhoneIcon className="mt-[3px] flex-none opacity-80" />
               <span>
-                {contact.phones.map((p, i) => (
+                {phones.map((p, i) => (
                   <span key={p.tel}>
                     {i > 0 && " / "}
                     <a href={`tel:${p.tel}`} className={`${linkClass} whitespace-nowrap`}>

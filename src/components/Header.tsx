@@ -17,7 +17,7 @@ const ITEMS: [NavPath, "home" | "solutions" | "about" | "team" | "contact"][] = 
   ["/contact", "contact"],
 ];
 
-export default function Header() {
+export default function Header({ logo }: { logo: string }) {
   const t = useTranslations("nav");
   const h = useTranslations("header");
   const pathname = usePathname();
@@ -39,7 +39,7 @@ export default function Header() {
       <div className="mx-auto flex h-[76px] max-w-[1120px] items-center gap-2 px-6 xs:gap-7">
         <Link href="/" aria-label={h("home")} className="shrink-0">
           <Image
-            src="/brand/logo-tsd.svg"
+            src={logo}
             alt="TSD Systems"
             width={200}
             height={40}

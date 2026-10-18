@@ -6,6 +6,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { routing } from "@/i18n/routing";
+import { getSiteSettings } from "@/lib/content";
 import "../globals.css";
 
 const crimson = Crimson_Pro({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-crimson" });
@@ -13,9 +14,8 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"], variabl
 
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> };
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
+// Contenu lu en base à chaque requête (avec cache invalidé par l'administration)
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: Pick<Props, "params">): Promise<Metadata> {
   const { locale } = await params;
@@ -28,6 +28,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "header" });
+  const settings = await getSiteSettings();
 
   return (
     <html lang={locale} className={`${crimson.variable} ${inter.variable}`}>
@@ -39,7 +40,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           {t("skip")}
         </a>
         <NextIntlClientProvider>
-          <Header />
+          <Header logo={settings.images.logo} />
           <main id="contenu" className="flex-1">
             {children}
           </main>
