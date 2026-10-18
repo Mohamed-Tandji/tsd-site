@@ -43,9 +43,6 @@
     }
   },
   "pages": {
-    "contact": {
-      "title": "Contact"
-    },
     "legal": {
       "title": "Mentions légales"
     },
@@ -187,6 +184,36 @@
       },
       "ibrahima-diallo": {
         "role": "Cofondateur"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Parlons de votre projet",
+    "intro": "Une question sur nos solutions ou un besoin particulier ? Écrivez-nous : nous vous répondons rapidement.",
+    "detailsTitle": "Coordonnées",
+    "emailLabel": "Courriel",
+    "phoneLabel": "Téléphone",
+    "formTitle": "Écrivez-nous",
+    "form": {
+      "name": "Nom",
+      "email": "Courriel",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours…",
+      "privacy": "Vos informations servent uniquement à répondre à votre message. <link>Politique de confidentialité</link>.",
+      "successTitle": "Merci, votre message a bien été envoyé.",
+      "successText": "Nous l’avons bien reçu et nous vous répondrons dans les meilleurs délais.",
+      "errors": {
+        "fix": "Certains champs sont à corriger.",
+        "nameShort": "Indiquez votre nom (2 caractères minimum).",
+        "nameLong": "Le nom est trop long (100 caractères maximum).",
+        "emailInvalid": "Indiquez une adresse courriel valide.",
+        "messageShort": "Votre message est trop court (10 caractères minimum).",
+        "messageLong": "Votre message est trop long (5 000 caractères maximum).",
+        "tooFast": "Le formulaire a été envoyé trop vite. Patientez quelques secondes, puis réessayez.",
+        "rateLimited": "Vous avez envoyé plusieurs messages en peu de temps. Réessayez dans une heure, ou écrivez-nous directement par courriel.",
+        "server": "Le message n’a pas pu être envoyé. Réessayez plus tard, ou écrivez-nous directement par courriel."
       }
     }
   }
