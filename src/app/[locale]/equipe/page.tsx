@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import CtaBand from "@/components/CtaBand";
 import PageHeader from "@/components/PageHeader";
 import { getTeam } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
+
+type MetaProps = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: MetaProps): Promise<Metadata> {
+  const { locale } = await params;
+  const [t, n] = await Promise.all([getTranslations({ locale, namespace: "team" }), getTranslations({ locale, namespace: "nav" })]);
+  return pageMetadata({ locale, href: "/equipe", title: n("team"), description: t("intro") });
+}
 
 export default async function TeamPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

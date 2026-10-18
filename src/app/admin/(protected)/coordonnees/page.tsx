@@ -4,7 +4,8 @@ import bandeau from "@/assets/accueil-bandeau.jpg";
 import { Card, Field, ImageField, Notice, PageTitle } from "@/components/admin/fields";
 import { SubmitButton } from "@/components/admin/ui";
 import { getSiteSettings } from "@/lib/content";
-import { saveContact, saveImages } from "./actions";
+import { LEGAL_FIELDS } from "@/lib/defaults";
+import { saveContact, saveImages, saveLegal } from "./actions";
 
 export const metadata: Metadata = { title: "Coordonnées et images" };
 
@@ -41,6 +42,18 @@ export default async function ContactSettingsPage({ searchParams }: { searchPara
             ))}
             <div>
               <SubmitButton>Enregistrer les coordonnées</SubmitButton>
+            </div>
+          </form>
+        </Card>
+
+        <Card title="Informations légales (mentions légales et confidentialité)">
+          <form action={saveLegal} className="grid gap-5">
+            <p className="text-sm text-slate">Un champ vide s’affiche « [À compléter] » sur le site.</p>
+            {LEGAL_FIELDS.map((f) => (
+              <Field key={f.key} name={f.key} label={f.label} defaultValue={s.legal[f.key.slice("legal.".length)]} maxLength={500} />
+            ))}
+            <div>
+              <SubmitButton>Enregistrer les informations légales</SubmitButton>
             </div>
           </form>
         </Card>

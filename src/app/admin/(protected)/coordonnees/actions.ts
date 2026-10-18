@@ -3,7 +3,7 @@
 import { back, contentChanged, isHttpUrl, str } from "@/lib/admin";
 import { requireAdmin } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { DEFAULT_SETTINGS, SOCIALS } from "@/lib/defaults";
+import { DEFAULT_SETTINGS, LEGAL_FIELDS, SOCIALS } from "@/lib/defaults";
 import { deleteUpload, fileFrom, saveImage, UploadError } from "@/lib/uploads";
 
 const PATH = "/admin/coordonnees";
@@ -37,6 +37,13 @@ export async function saveContact(formData: FormData) {
 
   contentChanged();
   back(PATH, { ok: "Coordonnées enregistrées." });
+}
+
+export async function saveLegal(formData: FormData) {
+  await requireAdmin();
+  for (const { key } of LEGAL_FIELDS) await setValue(key, str(formData, key).slice(0, 500));
+  contentChanged();
+  back(PATH, { ok: "Informations légales enregistrées." });
 }
 
 export async function saveImages(formData: FormData) {

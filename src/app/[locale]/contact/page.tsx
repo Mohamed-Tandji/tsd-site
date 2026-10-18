@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import ContactForm from "@/components/ContactForm";
 import { MailIcon, PhoneIcon } from "@/components/icons";
 import PageHeader from "@/components/PageHeader";
 import { getSiteSettings } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
+
+type MetaProps = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: MetaProps): Promise<Metadata> {
+  const { locale } = await params;
+  const [t, n] = await Promise.all([getTranslations({ locale, namespace: "contact" }), getTranslations({ locale, namespace: "nav" })]);
+  return pageMetadata({ locale, href: "/contact", title: n("contact"), description: t("intro") });
+}
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

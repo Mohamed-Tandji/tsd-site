@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import bandeau from "@/assets/accueil-bandeau.jpg";
@@ -6,9 +7,18 @@ import SolutionCard from "@/components/SolutionCard";
 import { buttonClass, SectionHeading } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
 import { getSiteSettings, getSolutions } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 const AUDIENCES = ["schools", "businesses", "agriculture"] as const;
 const PRINCIPLES = ["simple", "users", "lasting"] as const;
+
+type MetaProps = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: MetaProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
+  return pageMetadata({ locale, href: "/", description: t("description"), shareTitle: t("title") });
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

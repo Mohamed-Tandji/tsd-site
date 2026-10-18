@@ -10,10 +10,6 @@
     "team": "Équipe",
     "contact": "Contact"
   },
-  "common": {
-    "step": "Étape 4 · Socle technique",
-    "soon": "Cette page sera construite à une prochaine étape."
-  },
   "home": {
     "title": "Des solutions numériques qui connectent.",
     "subtitle": "Des applications de gestion pour les établissements scolaires, les commerces et les filières agricoles.",
@@ -40,14 +36,6 @@
         "title": "Fait pour durer",
         "text": "Des bases techniques solides et maintenables, pour accompagner la croissance de votre activité."
       }
-    }
-  },
-  "pages": {
-    "legal": {
-      "title": "Mentions légales"
-    },
-    "privacy": {
-      "title": "Confidentialité"
     }
   },
   "notFound": {
@@ -164,5 +152,50 @@
         "server": "Le message n’a pas pu être envoyé. Réessayez plus tard, ou écrivez-nous directement par courriel."
       }
     }
+  },
+  "legalPage": {
+    "eyebrow": "Informations légales",
+    "title": "Mentions légales",
+    "description": "Mentions légales du site de TSD Systems : éditeur, hébergement et propriété intellectuelle.",
+    "missing": "[À compléter]",
+    "publisherTitle": "Éditeur du site",
+    "company": "Raison sociale",
+    "form": "Forme juridique",
+    "registration": "Numéro d’enregistrement",
+    "address": "Adresse du siège",
+    "email": "Courriel",
+    "phone": "Téléphone",
+    "directorTitle": "Publication",
+    "director": "Directeur ou directrice de la publication",
+    "hostTitle": "Hébergement",
+    "host": "Hébergeur",
+    "ipTitle": "Propriété intellectuelle",
+    "ipText": "Les contenus de ce site (textes, logos, mise en page) appartiennent à TSD Systems, sauf mention contraire. Toute reproduction sans autorisation écrite est interdite.",
+    "photosText": "Certaines photographies d’illustration proviennent de la banque d’images Pexels et sont utilisées selon sa licence. Elles ne représentent pas l’équipe de TSD Systems.",
+    "contactTitle": "Contact",
+    "contactText": "Pour toute question sur ce site, écrivez-nous à {email}."
+  },
+  "privacyPage": {
+    "eyebrow": "Informations légales",
+    "title": "Politique de confidentialité",
+    "description": "Comment TSD Systems traite les informations envoyées par le formulaire de contact.",
+    "intro": "Cette page explique quelles informations nous recevons par ce site et comment nous les utilisons.",
+    "missing": "[À compléter]",
+    "controllerTitle": "Responsable du traitement",
+    "controller": "Société",
+    "contact": "Contact",
+    "dataTitle": "Informations collectées",
+    "dataText": "Le formulaire de contact recueille votre nom, votre adresse courriel et votre message. Aucune autre information personnelle n’est demandée.",
+    "ipText": "Pour limiter les envois abusifs, votre adresse IP est transformée en une empreinte non réversible ; l’adresse elle-même n’est pas conservée.",
+    "purposeTitle": "Utilisation",
+    "purposeText": "Ces informations servent uniquement à répondre à votre message. Elles ne sont ni vendues, ni utilisées à des fins publicitaires.",
+    "recipientsTitle": "Destinataires",
+    "recipientsText": "Vos messages sont lus par l’équipe de TSD Systems. Ils sont enregistrés chez notre hébergeur et peuvent transiter par notre prestataire d’envoi de courriels pour nous avertir de leur arrivée.",
+    "retentionTitle": "Durée de conservation",
+    "retention": "Messages du formulaire",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "Ce site n’utilise aucun cookie de mesure d’audience ni de publicité. Seul un cookie technique est déposé lorsqu’un administrateur se connecte à l’espace d’administration.",
+    "rightsTitle": "Vos droits",
+    "rightsText": "Vous pouvez demander à consulter, corriger ou supprimer les informations vous concernant en écrivant à {email}."
   }
 }

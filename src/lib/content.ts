@@ -1,7 +1,7 @@
 import "server-only";
 import { unstable_cache } from "next/cache";
 import { db } from "@/lib/db";
-import { DEFAULT_SETTINGS, SOCIALS } from "@/lib/defaults";
+import { DEFAULT_SETTINGS, LEGAL_FIELDS, SOCIALS } from "@/lib/defaults";
 
 // Tout le contenu public est mis en cache sous ce tag ; chaque enregistrement dans /admin l’invalide.
 // Filet de sécurité : 5 minutes au plus (modifications faites directement en base, seed…)
@@ -31,6 +31,7 @@ export async function getSiteSettings() {
     email: value("contact.email"),
     phones: [value("contact.phone1"), value("contact.phone2")].filter(Boolean).map(phone),
     socials: SOCIALS.map(({ key, label }) => ({ key, label, handle: value(`social.${key}.handle`), url: value(`social.${key}.url`) })),
+    legal: Object.fromEntries(LEGAL_FIELDS.map(({ key }) => [key.slice("legal.".length), value(key)])) as Record<string, string>,
     images: {
       logo: value("image.logo"),
       logoWhite: value("image.logoWhite"),
