@@ -43,9 +43,6 @@
     }
   },
   "pages": {
-    "contact": {
-      "title": "Contact"
-    },
     "legal": {
       "title": "Legal notice"
     },
@@ -187,6 +184,36 @@
       },
       "ibrahima-diallo": {
         "role": "Co-founder"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let’s talk about your project",
+    "intro": "A question about our solutions or a specific need? Write to us: we reply quickly.",
+    "detailsTitle": "Contact details",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "formTitle": "Write to us",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "privacy": "Your information is only used to reply to your message. <link>Privacy policy</link>.",
+      "successTitle": "Thank you, your message has been sent.",
+      "successText": "We have received it and will get back to you as soon as possible.",
+      "errors": {
+        "fix": "Some fields need to be corrected.",
+        "nameShort": "Enter your name (at least 2 characters).",
+        "nameLong": "The name is too long (100 characters maximum).",
+        "emailInvalid": "Enter a valid email address.",
+        "messageShort": "Your message is too short (at least 10 characters).",
+        "messageLong": "Your message is too long (5,000 characters maximum).",
+        "tooFast": "The form was sent too quickly. Wait a few seconds, then try again.",
+        "rateLimited": "You have sent several messages in a short time. Try again in an hour, or email us directly.",
+        "server": "The message could not be sent. Try again later, or email us directly."
       }
     }
   }

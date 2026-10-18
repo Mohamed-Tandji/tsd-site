@@ -61,6 +61,12 @@ model ContactMessage {
   name      String
   email     String
   body      String   @db.Text
+  locale    String   @default("fr")
+  ipHash    String   @default("") // IP hachée (SHA-256 + sel), pour limiter les envois sans stocker l'IP
+  notified  Boolean  @default(false) // courriel de notification envoyé
   read      Boolean  @default(false)
   createdAt DateTime @default(now())
+
+  @@index([ipHash, createdAt])
+  @@index([createdAt])
 }
