@@ -3,7 +3,7 @@
 - [x] Démarrage : prérequis, dépôt git, PLAN.md
 - [x] 4. Socle technique : Next.js/TS/Tailwind/next-intl, Docker + PostgreSQL, Prisma, pages vides FR/EN, /api/health
 - [x] 5. Structure : en-tête (logo, menu actif, bascule FR/EN, menu mobile), pied de page, gabarit commun
-- [ ] 6. Accueil (fidèle à la maquette)
+- [x] 6. Accueil (fidèle à la maquette)
 - [ ] 7. Solutions et fiches solution
 - [ ] 8. À propos et Équipe
 - [ ] 9. Contact : formulaire, validation, antispam, base, Resend
