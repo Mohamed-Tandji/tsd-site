@@ -3,23 +3,59 @@
 @theme {
   --color-navy: #0b1b2b;
   --color-action: #0b63c9;
+  --color-action-hover: #0a55ac;
   --color-brand: #047ffc;
   --color-slate: #4d5b69;
   --color-mint: #53ecb5;
   --color-paper: #f4f7fa;
   --color-line: #d9e2ea;
+  /* pied de page (fond marine) */
+  --color-footer: #b7c6d6;
+  --color-footer-muted: #8ea3b8;
+  --color-footer-line: #213a52;
 
   --font-serif: var(--font-crimson), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* points de rupture de la maquette : 560 px et 900 px */
+  --breakpoint-xs: 35.0625rem;
+  --breakpoint-nav: 56.3125rem;
 }
 
-html {
-  color-scheme: light;
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    line-height: 1.08;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-brand);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
   }
 }
