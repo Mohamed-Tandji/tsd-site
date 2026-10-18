@@ -46,5 +46,22 @@
     "title": "Page not found",
     "text": "The page you requested does not exist or has been moved.",
     "back": "Back to home"
+  },
+  "header": {
+    "home": "TSD Systems – home",
+    "menu": "Menu",
+    "mainNav": "Main navigation",
+    "language": "Langue : français / English",
+    "skip": "Skip to content"
+  },
+  "footer": {
+    "contact": "Contact details",
+    "navigation": "Navigation",
+    "solutions": "Solutions",
+    "follow": "Follow us",
+    "newTab": "opens in a new tab",
+    "legal": "Legal notice",
+    "privacy": "Privacy",
+    "rights": "© {year} TSD Systems. All rights reserved."
   }
 }

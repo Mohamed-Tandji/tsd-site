@@ -46,5 +46,22 @@
     "title": "Page introuvable",
     "text": "L’adresse demandée n’existe pas ou a été déplacée.",
     "back": "Retour à l’accueil"
+  },
+  "header": {
+    "home": "TSD Systems – accueil",
+    "menu": "Menu",
+    "mainNav": "Navigation principale",
+    "language": "Langue : français / English",
+    "skip": "Aller au contenu"
+  },
+  "footer": {
+    "contact": "Coordonnées",
+    "navigation": "Navigation",
+    "solutions": "Solutions",
+    "follow": "Suivez-nous",
+    "newTab": "s’ouvre dans un nouvel onglet",
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité",
+    "rights": "© {year} TSD Systems. Tous droits réservés."
   }
 }
