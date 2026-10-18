@@ -41,5 +41,10 @@
     "privacy": {
       "title": "Privacy"
     }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you requested does not exist or has been moved.",
+    "back": "Back to home"
   }
 }
