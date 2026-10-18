@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "title": "TSD Systems – Solutions that connect",
+    "description": "TSD Systems designs and sells digital solutions: school management, stock management and an agro-industrial platform."
+  },
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "about": "About",
+    "team": "Team",
+    "contact": "Contact"
+  },
+  "common": {
+    "step": "Step 4 · Technical foundation",
+    "soon": "This page will be built in a later step."
+  },
+  "home": {
+    "title": "Digital solutions that connect.",
+    "subtitle": "Management applications for schools, businesses and agricultural value chains.",
+    "cta": "Discover our solutions"
+  },
+  "pages": {
+    "solutions": {
+      "title": "Our solutions"
+    },
+    "solution": {
+      "title": "Solution details"
+    },
+    "about": {
+      "title": "About"
+    },
+    "team": {
+      "title": "The team"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "legal": {
+      "title": "Legal notice"
+    },
+    "privacy": {
+      "title": "Privacy"
+    }
+  }
+}

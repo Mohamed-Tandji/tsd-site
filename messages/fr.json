@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "title": "TSD Systems – Des solutions qui connectent",
+    "description": "TSD Systems conçoit et commercialise des solutions numériques : gestion scolaire, gestion de stock et plateforme agro-industrielle."
+  },
+  "nav": {
+    "home": "Accueil",
+    "solutions": "Solutions",
+    "about": "À propos",
+    "team": "Équipe",
+    "contact": "Contact"
+  },
+  "common": {
+    "step": "Étape 4 · Socle technique",
+    "soon": "Cette page sera construite à une prochaine étape."
+  },
+  "home": {
+    "title": "Des solutions numériques qui connectent.",
+    "subtitle": "Des applications de gestion pour les établissements scolaires, les commerces et les filières agricoles.",
+    "cta": "Découvrir nos solutions"
+  },
+  "pages": {
+    "solutions": {
+      "title": "Nos solutions"
+    },
+    "solution": {
+      "title": "Fiche solution"
+    },
+    "about": {
+      "title": "À propos"
+    },
+    "team": {
+      "title": "L’équipe"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "legal": {
+      "title": "Mentions légales"
+    },
+    "privacy": {
+      "title": "Confidentialité"
+    }
+  }
+}
