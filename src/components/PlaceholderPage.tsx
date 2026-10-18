@@ -1,6 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-type Props = { locale: string; ns: "solutions" | "solution" | "about" | "team" | "contact" | "legal" | "privacy" };
+type Props = { locale: string; ns: "contact" | "legal" | "privacy" };
 
 export default async function PlaceholderPage({ locale, ns }: Props) {
   setRequestLocale(locale);
