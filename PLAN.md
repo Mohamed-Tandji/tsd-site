@@ -5,7 +5,7 @@
 - [x] 5. Structure : en-tête (logo, menu actif, bascule FR/EN, menu mobile), pied de page, gabarit commun
 - [x] 6. Accueil (fidèle à la maquette)
 - [x] 7. Solutions et fiches solution
-- [ ] 8. À propos et Équipe
+- [x] 8. À propos et Équipe
 - [ ] 9. Contact : formulaire, validation, antispam, base, Resend
 - [ ] 10. Administration (/admin) : connexion, comptes, contenus FR/EN, médias, solutions, équipe, messages, seed
 - [ ] 11. Finitions : SEO, accessibilité, performance, pages légales, sauvegardes
