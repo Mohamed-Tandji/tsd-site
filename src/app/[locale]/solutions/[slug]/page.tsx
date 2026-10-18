@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -5,12 +6,31 @@ import CtaBand from "@/components/CtaBand";
 import { buttonClass, StatusBadge } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
 import { getSolutions } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
-export default async function SolutionDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+type Props = { params: Promise<{ locale: string; slug: string }> };
+
+// Seules les solutions disponibles ont une fiche
+async function findSolution(locale: string, slug: string) {
+  return (await getSolutions(locale)).find((s) => s.slug === slug && s.status === "AVAILABLE");
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const solution = await findSolution(locale, slug);
+  if (!solution) return {};
+  return pageMetadata({
+    locale,
+    href: { pathname: "/solutions/[slug]", params: { slug } },
+    title: `${solution.name} – ${solution.category}`,
+    description: solution.summary,
+  });
+}
+
+export default async function SolutionDetailPage({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  // Seules les solutions disponibles ont une fiche
-  const solution = (await getSolutions(locale)).find((s) => s.slug === slug && s.status === "AVAILABLE");
+  const solution = await findSolution(locale, slug);
   if (!solution) notFound();
 
   const t = await getTranslations({ locale, namespace: "catalog" });

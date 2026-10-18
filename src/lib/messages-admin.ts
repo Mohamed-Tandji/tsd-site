@@ -19,9 +19,9 @@ export const SECTIONS: { key: string; label: string }[] = [
   { key: "header", label: "En-tête" },
   { key: "footer", label: "Pied de page" },
   { key: "meta", label: "Titre et description du site" },
-  { key: "pages", label: "Pages légales" },
+  { key: "legalPage", label: "Mentions légales" },
+  { key: "privacyPage", label: "Confidentialité" },
   { key: "notFound", label: "Page introuvable" },
-  { key: "common", label: "Pages en construction" },
 ];
 
 function flatten(tree: Tree, prefix = ""): [string, string][] {

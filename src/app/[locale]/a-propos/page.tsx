@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import reunion from "@/assets/apropos-reunion.jpg";
@@ -6,9 +7,18 @@ import PageHeader from "@/components/PageHeader";
 import { SectionHeading } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
 import { getSiteSettings } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 const PRINCIPLES = ["simple", "users", "lasting"] as const;
 const VALUES = ["clarity", "reliability", "listening", "transparency"] as const;
+
+type MetaProps = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: MetaProps): Promise<Metadata> {
+  const { locale } = await params;
+  const [t, n] = await Promise.all([getTranslations({ locale, namespace: "about" }), getTranslations({ locale, namespace: "nav" })]);
+  return pageMetadata({ locale, href: "/a-propos", title: n("about"), description: t("intro") });
+}
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

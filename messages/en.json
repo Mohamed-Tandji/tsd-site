@@ -10,10 +10,6 @@
     "team": "Team",
     "contact": "Contact"
   },
-  "common": {
-    "step": "Step 4 · Technical foundation",
-    "soon": "This page will be built in a later step."
-  },
   "home": {
     "title": "Digital solutions that connect.",
     "subtitle": "Management applications for schools, businesses and agricultural value chains.",
@@ -40,14 +36,6 @@
         "title": "Built to last",
         "text": "Solid, maintainable technical foundations to support your growth."
       }
-    }
-  },
-  "pages": {
-    "legal": {
-      "title": "Legal notice"
-    },
-    "privacy": {
-      "title": "Privacy"
     }
   },
   "notFound": {
@@ -164,5 +152,50 @@
         "server": "The message could not be sent. Try again later, or email us directly."
       }
     }
+  },
+  "legalPage": {
+    "eyebrow": "Legal information",
+    "title": "Legal notice",
+    "description": "Legal notice of the TSD Systems website: publisher, hosting and intellectual property.",
+    "missing": "[To be completed]",
+    "publisherTitle": "Website publisher",
+    "company": "Company name",
+    "form": "Legal form",
+    "registration": "Registration number",
+    "address": "Registered office",
+    "email": "Email",
+    "phone": "Phone",
+    "directorTitle": "Publication",
+    "director": "Publication director",
+    "hostTitle": "Hosting",
+    "host": "Host",
+    "ipTitle": "Intellectual property",
+    "ipText": "The content of this website (texts, logos, layout) belongs to TSD Systems unless otherwise stated. Any reproduction without written permission is prohibited.",
+    "photosText": "Some illustration photos come from the Pexels image library and are used under its licence. They do not depict the TSD Systems team.",
+    "contactTitle": "Contact",
+    "contactText": "For any question about this website, write to us at {email}."
+  },
+  "privacyPage": {
+    "eyebrow": "Legal information",
+    "title": "Privacy policy",
+    "description": "How TSD Systems handles the information sent through the contact form.",
+    "intro": "This page explains what information we receive through this website and how we use it.",
+    "missing": "[To be completed]",
+    "controllerTitle": "Data controller",
+    "controller": "Company",
+    "contact": "Contact",
+    "dataTitle": "Information collected",
+    "dataText": "The contact form collects your name, your email address and your message. No other personal information is requested.",
+    "ipText": "To limit abuse, your IP address is turned into a non-reversible fingerprint; the address itself is not stored.",
+    "purposeTitle": "Use",
+    "purposeText": "This information is only used to reply to your message. It is never sold or used for advertising.",
+    "recipientsTitle": "Recipients",
+    "recipientsText": "Your messages are read by the TSD Systems team. They are stored with our hosting provider and may pass through our email delivery provider so that we are notified of their arrival.",
+    "retentionTitle": "Retention period",
+    "retention": "Contact form messages",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "This website uses no analytics or advertising cookies. Only a technical cookie is set when an administrator signs in to the administration area.",
+    "rightsTitle": "Your rights",
+    "rightsText": "You can ask to access, correct or delete the information about you by writing to {email}."
   }
 }
