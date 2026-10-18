@@ -15,7 +15,7 @@ const linkClass = "text-footer hover:text-white hover:underline";
 
 function ColumnTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-3.5 font-sans text-sm font-semibold uppercase tracking-[0.08em] text-white before:mb-3.5 before:block before:h-0.5 before:w-6 before:bg-mint before:content-['']">
+    <h2 className="mb-3.5 font-sans text-sm leading-normal font-semibold uppercase tracking-[0.08em] text-white before:mb-3.5 before:block before:h-0.5 before:w-6 before:bg-mint before:content-['']">
       {children}
     </h2>
   );

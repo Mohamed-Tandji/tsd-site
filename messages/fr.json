@@ -17,7 +17,32 @@
   "home": {
     "title": "Des solutions numériques qui connectent.",
     "subtitle": "Des applications de gestion pour les établissements scolaires, les commerces et les filières agricoles.",
-    "cta": "Découvrir nos solutions"
+    "ctaSolutions": "Découvrir nos solutions",
+    "ctaContact": "Nous contacter",
+    "audiences": {
+      "schools": "Établissements scolaires",
+      "businesses": "Commerces et entrepôts",
+      "agriculture": "Coopératives et filières agricoles"
+    },
+    "solutionsTitle": "Nos solutions",
+    "solutionsText": "Des outils clairs pour remplacer le papier et les fichiers dispersés.",
+    "approachTitle": "Notre approche",
+    "principles": {
+      "simple": {
+        "title": "Simple à adopter",
+        "text": "Des interfaces claires, pensées pour des équipes qui n’ont pas le temps de se former longtemps."
+      },
+      "users": {
+        "title": "Construit avec ses utilisateurs",
+        "text": "Chaque solution évolue à partir des retours du terrain, pas à partir d’hypothèses."
+      },
+      "lasting": {
+        "title": "Fait pour durer",
+        "text": "Des bases techniques solides et maintenables, pour accompagner la croissance de votre activité."
+      }
+    },
+    "ctaTitle": "Un projet en tête ?",
+    "ctaText": "Parlez-nous de votre besoin : nous vous répondons rapidement."
   },
   "pages": {
     "solutions": {
@@ -63,5 +88,26 @@
     "legal": "Mentions légales",
     "privacy": "Confidentialité",
     "rights": "© {year} TSD Systems. Tous droits réservés."
+  },
+  "catalog": {
+    "available": "Disponible",
+    "comingSoon": "Bientôt disponible",
+    "discover": "Découvrir",
+    "discoverName": "Découvrir {name}",
+    "logoAlt": "Logo {name}",
+    "items": {
+      "kalanso-kunafoni": {
+        "category": "Gestion scolaire",
+        "summary": "Plateforme tout-en-un pour gérer l’administration, la pédagogie et les finances d’un établissement scolaire."
+      },
+      "stockautoplus": {
+        "category": "Gestion de stock",
+        "summary": "Application de gestion de stock pour suivre les produits, les entrées et les sorties."
+      },
+      "fasolink": {
+        "category": "Plateforme agro-industrielle",
+        "summary": "Plateforme qui relie les coopératives de producteurs, les intermédiaires et les industries agricoles du Mali."
+      }
+    }
   }
 }

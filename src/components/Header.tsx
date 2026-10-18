@@ -54,7 +54,7 @@ export default function Header() {
           aria-expanded={open}
           aria-controls="menu-principal"
           onClick={() => setOpen((o) => !o)}
-          className="ml-auto cursor-pointer rounded border border-line px-3 py-2 text-sm xs:px-3.5 font-semibold text-navy nav:hidden"
+          className="ml-auto cursor-pointer rounded border border-line px-3 py-2 text-sm leading-normal font-semibold xs:px-3.5 text-navy nav:hidden"
         >
           {h("menu")}
         </button>
@@ -71,7 +71,7 @@ export default function Header() {
                 key={href}
                 href={href}
                 aria-current={active ? "page" : undefined}
-                className={`border-b py-3.5 text-[15px] text-navy transition-colors duration-150 hover:text-action nav:border-b-[3px] nav:px-3.5 nav:py-2 ${
+                className={`border-b py-3.5 text-[15px] leading-normal text-navy transition-colors duration-150 hover:text-action nav:border-b-[3px] nav:px-3.5 nav:py-2 ${
                   active ? "border-mint font-semibold" : "border-line font-medium nav:border-transparent"
                 }`}
               >
