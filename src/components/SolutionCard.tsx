@@ -5,7 +5,8 @@ import { Link } from "@/i18n/navigation";
 import type { SolutionInfo } from "@/lib/site";
 
 // Carte solution (accueil et page Solutions) : « Découvrir » seulement si la solution est disponible
-export default async function SolutionCard({ solution }: { solution: SolutionInfo }) {
+export default async function SolutionCard({ solution, headingLevel = "h3" }: { solution: SolutionInfo; headingLevel?: "h2" | "h3" }) {
+  const Heading = headingLevel;
   const t = await getTranslations("catalog");
   const available = solution.status === "AVAILABLE";
 
@@ -18,7 +19,7 @@ export default async function SolutionCard({ solution }: { solution: SolutionInf
       </div>
       <div className="flex flex-1 flex-col gap-2.5 p-[30px]">
         <StatusBadge available={available} label={available ? t("available") : t("comingSoon")} />
-        <h3 className="mt-1.5 text-[1.65rem]">{solution.name}</h3>
+        <Heading className="mt-1.5 text-[1.65rem]">{solution.name}</Heading>
         <div className="text-sm leading-normal font-semibold text-action">{t(`items.${solution.slug}.category`)}</div>
         <p className="text-[15.5px] text-slate">{t(`items.${solution.slug}.summary`)}</p>
         {available && (
