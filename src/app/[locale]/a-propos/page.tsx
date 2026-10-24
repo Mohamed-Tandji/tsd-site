@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import reunion from "@/assets/apropos-reunion.jpg";
 import CtaBand from "@/components/CtaBand";
+import LogoAnimation from "@/components/LogoAnimation";
 import PageHeader from "@/components/PageHeader";
 import { SectionHeading } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
@@ -78,7 +79,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       {/* Origine du nom */}
       <section className="border-t border-line py-[88px] nav:py-[120px]">
-        <div className="mx-auto max-w-[1120px] px-6">
+        <div className="mx-auto grid max-w-[1120px] grid-cols-1 items-center gap-12 px-6 nav:grid-cols-[0.85fr_1.15fr] nav:gap-16">
           <div className="max-w-[620px]">
             <h2 className="text-[clamp(2rem,3.6vw,2.7rem)]">{t("nameTitle")}</h2>
             <p className="mt-4 text-slate">{t("nameText")}</p>
@@ -86,6 +87,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               {t("teamLink")} →
             </Link>
           </div>
+          <LogoAnimation
+            labels={{ title: t("animationTitle"), play: t("animationPlay"), pause: t("animationPause"), replay: t("animationReplay") }}
+          />
         </div>
       </section>
 

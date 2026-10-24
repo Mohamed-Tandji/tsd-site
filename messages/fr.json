@@ -122,7 +122,11 @@
     },
     "nameTitle": "TSD : trois initiales, trois fondateurs",
     "nameText": "Le nom TSD Systems vient des initiales de ses trois fondateurs : Tandjigora, Sanogo et Diallo.",
-    "teamLink": "Découvrir l’équipe"
+    "teamLink": "Découvrir l’équipe",
+    "animationTitle": "Animation du logo TSD Systems : « Des solutions qui connectent »",
+    "animationPlay": "Lire l’animation",
+    "animationPause": "Mettre en pause",
+    "animationReplay": "Revoir l’animation"
   },
   "team": {
     "eyebrow": "Équipe",
