@@ -36,7 +36,7 @@ export default function Header({ logo }: { logo: string }) {
 
   return (
     <header className="sticky top-0 z-20 border-b border-line bg-white">
-      <div className="mx-auto flex h-[76px] max-w-[1120px] items-center gap-2 px-6 xs:gap-7">
+      <div className="mx-auto flex h-[76px] max-w-[1440px] items-center gap-2 px-6 xs:gap-7 nav:px-10">
         <Link href="/" aria-label={h("home")} className="shrink-0">
           <Image
             src={logo}
