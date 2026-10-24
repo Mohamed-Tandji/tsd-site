@@ -8,36 +8,93 @@
       "position": 1,
       "taglineFr": "Gestion scolaire",
       "taglineEn": "School management",
-      "summaryFr": "Plateforme tout-en-un pour gérer l’administration, la pédagogie et les finances d’un établissement scolaire.",
-      "summaryEn": "All-in-one platform to manage the administration, teaching and finances of a school.",
-      "descriptionFr": "Kalanso Kunafoni réunit dans une seule plateforme la gestion administrative, le suivi pédagogique et la gestion financière d’un établissement scolaire. La direction, le secrétariat et les enseignants travaillent sur les mêmes informations, à jour, sans multiplier les registres et les fichiers.",
-      "descriptionEn": "Kalanso Kunafoni brings together a school’s administration, teaching follow-up and financial management in a single platform. Management, office staff and teachers work from the same up-to-date information, without multiplying registers and files.",
+      "summaryFr": "Plateforme tout-en-un pour gérer la scolarité, les évaluations, la communication et les finances d’un établissement, du jardin au secondaire.",
+      "summaryEn": "All-in-one platform to manage a school’s enrolment, assessments, communication and finances, from kindergarten to secondary school.",
+      "descriptionFr": "Kalanso Kunafoni réunit dans une seule plateforme la gestion d’un établissement scolaire, du jardin d’enfants au secondaire : classes et salles, emplois du temps, notes, bulletins, bilans de fin d’année et échanges avec les élèves et les enseignants.\n\nLa direction, le secrétariat et les enseignants travaillent sur les mêmes informations, à jour, sans multiplier les registres et les fichiers.",
+      "descriptionEn": "Kalanso Kunafoni brings together the management of a school, from kindergarten to secondary level, in a single platform: classes and rooms, timetables, marks, report cards, end-of-year reviews and exchanges with students and teachers.\n\nManagement, office staff and teachers work from the same up-to-date information, without multiplying registers and files.",
       "featuresFr": [
         {
-          "title": "Administration",
-          "text": "Les dossiers des élèves et l’organisation de l’établissement, regroupés au même endroit."
+          "title": "Tableau de bord",
+          "text": "Élèves inscrits, enseignants, classes actives, taux de réussite et absences de l’année en cours, d’un coup d’œil."
         },
         {
-          "title": "Pédagogie",
-          "text": "Le suivi des classes et des résultats des élèves, partagé avec l’équipe enseignante."
+          "title": "Scolarité",
+          "text": "Classes et salles, matières, emplois du temps, cahier de discipline et certificats de fréquentation."
+        },
+        {
+          "title": "Notes et bulletins",
+          "text": "Saisie des évaluations par classe et par matière, bulletins calculés automatiquement, prêts à imprimer ou à télécharger."
+        },
+        {
+          "title": "Bilan de l’année",
+          "text": "Taux de réussite et moyennes par classe, tableau d’honneur et propositions de passage."
+        },
+        {
+          "title": "Communication",
+          "text": "Notifications, réclamations des élèves et demandes de permission des enseignants, suivies au même endroit."
         },
         {
           "title": "Finances",
-          "text": "Le suivi des frais de scolarité et des paiements, pour une vision claire des finances."
+          "text": "Suivi des factures et du taux de règlement des frais de scolarité par niveau."
         }
       ],
       "featuresEn": [
         {
-          "title": "Administration",
-          "text": "Student records and school organisation, gathered in one place."
+          "title": "Dashboard",
+          "text": "Enrolled students, teachers, active classes, pass rate and absences for the current year, at a glance."
         },
         {
-          "title": "Teaching",
-          "text": "Class and student results follow-up, shared with the teaching team."
+          "title": "School life",
+          "text": "Classes and rooms, subjects, timetables, discipline record and attendance certificates."
+        },
+        {
+          "title": "Marks and report cards",
+          "text": "Assessments entered by class and subject, report cards calculated automatically, ready to print or download."
+        },
+        {
+          "title": "End-of-year review",
+          "text": "Pass rates and averages by class, honour roll and promotion proposals."
+        },
+        {
+          "title": "Communication",
+          "text": "Notifications, student complaints and teacher leave requests, all tracked in one place."
         },
         {
           "title": "Finances",
-          "text": "Tracking of school fees and payments, for a clear view of the finances."
+          "text": "Tracking of invoices and of the school-fee payment rate by level."
+        }
+      ],
+      "imageUrl": "/solutions/kalanso-kunafoni/tableau-de-bord.webp",
+      "screenshots": [
+        {
+          "url": "/solutions/kalanso-kunafoni/classes-et-salles.webp",
+          "captionFr": "Classes et salles : effectifs, places libres et disponibilité des salles.",
+          "captionEn": "Classes and rooms: enrolment, free places and room availability."
+        },
+        {
+          "url": "/solutions/kalanso-kunafoni/emploi-du-temps.webp",
+          "captionFr": "Emploi du temps par classe ou par enseignant, imprimable et téléchargeable en PDF.",
+          "captionEn": "Timetable by class or by teacher, printable and downloadable as PDF."
+        },
+        {
+          "url": "/solutions/kalanso-kunafoni/notes-et-evaluations.webp",
+          "captionFr": "Notes et évaluations : relevés par classe et par matière, classement des élèves.",
+          "captionEn": "Marks and assessments: records by class and subject, student ranking."
+        },
+        {
+          "url": "/solutions/kalanso-kunafoni/bulletins-scolaires.webp",
+          "captionFr": "Bulletins scolaires générés par classe et par période.",
+          "captionEn": "Report cards generated by class and period."
+        },
+        {
+          "url": "/solutions/kalanso-kunafoni/bilan-scolaire.webp",
+          "captionFr": "Bilan scolaire : taux de réussite, moyennes et résultats par classe.",
+          "captionEn": "School review: pass rate, averages and results by class."
+        },
+        {
+          "url": "/solutions/kalanso-kunafoni/demandes.webp",
+          "captionFr": "Demandes : réclamations des élèves et permissions des enseignants.",
+          "captionEn": "Requests: student complaints and teacher leave requests."
         }
       ]
     },

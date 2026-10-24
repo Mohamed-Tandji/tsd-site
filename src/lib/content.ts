@@ -61,6 +61,12 @@ function toFeatures(value: unknown): Feature[] {
     : [];
 }
 
+type Screenshot = { url: string; captionFr: string; captionEn: string };
+
+function toScreenshots(value: unknown): Screenshot[] {
+  return Array.isArray(value) ? value.filter((s): s is Screenshot => typeof s?.url === "string" && s.url !== "") : [];
+}
+
 export async function getSolutions(locale: string) {
   const rows = await loadSolutions();
   return rows.map((s) => {
@@ -76,6 +82,10 @@ export async function getSolutions(locale: string) {
       summary: pick(locale, s.summaryFr, s.summaryEn),
       description: pick(locale, s.descriptionFr, s.descriptionEn),
       features: locale === "en" && featuresEn.length ? featuresEn : toFeatures(s.featuresFr),
+      screenshots: toScreenshots(s.screenshots).map((shot) => ({
+        url: shot.url,
+        caption: pick(locale, shot.captionFr ?? "", shot.captionEn ?? ""),
+      })),
     };
   });
 }

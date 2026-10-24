@@ -71,6 +71,7 @@ model Solution {
   status        SolutionStatus @default(COMING_SOON)
   logoUrl       String?
   imageUrl      String? // visuel de la fiche (capture d'écran)
+  screenshots   Json           @default("[]") // galerie de la fiche : [{ url, captionFr, captionEn }]
   appUrl        String?
   position      Int            @default(0)
   published     Boolean        @default(true)

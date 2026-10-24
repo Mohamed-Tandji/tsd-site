@@ -7,7 +7,10 @@ import { requireAdmin } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { deleteUpload, fileFrom, saveImage, UploadError } from "@/lib/uploads";
 
-const FEATURE_ROWS = 4;
+const FEATURE_ROWS = 6;
+const SHOT_ROWS = 8;
+
+type Shot = { url: string; captionFr: string; captionEn: string };
 
 function features(formData: FormData, locale: "fr" | "en") {
   return Array.from({ length: FEATURE_ROWS }, (_, i) => ({
@@ -31,6 +34,22 @@ async function imageValue(formData: FormData, name: string, previous: string | n
   return previous;
 }
 
+// Galerie : chaque ligne garde, remplace ou retire sa capture (adresses précédentes lues en base, jamais dans le formulaire)
+async function screenshots(formData: FormData, previous: unknown) {
+  const before = Array.isArray(previous) ? (previous as Shot[]) : [];
+  const rows: Shot[] = [];
+  for (let i = 0; i < SHOT_ROWS; i++) {
+    const url = await imageValue(formData, `shot${i}`, before[i]?.url ?? null);
+    if (url)
+      rows.push({
+        url,
+        captionFr: str(formData, `shot${i}.captionFr`).slice(0, 200),
+        captionEn: str(formData, `shot${i}.captionEn`).slice(0, 200),
+      });
+  }
+  return rows;
+}
+
 export async function saveSolution(formData: FormData) {
   await requireAdmin();
   const id = Number(formData.get("id")) || null;
@@ -49,10 +68,11 @@ export async function saveSolution(formData: FormData) {
   const existing = id ? await db.solution.findUnique({ where: { id } }) : null;
   if (id && !existing) back("/admin/solutions", { error: "Solution introuvable." });
 
-  let logoUrl: string | null, imageUrl: string | null;
+  let logoUrl: string | null, imageUrl: string | null, shots: Shot[];
   try {
     logoUrl = await imageValue(formData, "logo", existing?.logoUrl ?? null);
     imageUrl = await imageValue(formData, "image", existing?.imageUrl ?? null);
+    shots = await screenshots(formData, existing?.screenshots);
   } catch (err) {
     if (err instanceof UploadError) back(formPath, { error: err.message });
     throw err;
@@ -67,6 +87,7 @@ export async function saveSolution(formData: FormData) {
     published: bool(formData, "published"),
     logoUrl,
     imageUrl,
+    screenshots: shots,
     taglineFr: str(formData, "fr.tagline").slice(0, 120),
     taglineEn: str(formData, "en.tagline").slice(0, 120),
     summaryFr: str(formData, "fr.summary").slice(0, 400),
@@ -90,6 +111,7 @@ export async function deleteSolution(formData: FormData) {
     await db.solution.delete({ where: { id } });
     await deleteUpload(solution.logoUrl);
     await deleteUpload(solution.imageUrl);
+    for (const shot of Array.isArray(solution.screenshots) ? (solution.screenshots as Shot[]) : []) await deleteUpload(shot.url);
     contentChanged();
   }
   redirect("/admin/solutions?ok=" + encodeURIComponent("Solution supprimée."));

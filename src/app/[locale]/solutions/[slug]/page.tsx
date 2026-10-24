@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import CtaBand from "@/components/CtaBand";
+import ScreenshotGallery from "@/components/ScreenshotGallery";
 import { buttonClass, StatusBadge } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
 import { getSolutions } from "@/lib/content";
@@ -95,6 +96,29 @@ export default async function SolutionDetailPage({ params }: Props) {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {solution.screenshots.length > 0 && (
+        <section className="border-t border-line bg-paper py-[88px] nav:py-[120px]">
+          <div className="mx-auto max-w-[1120px] px-6">
+            <div className="mb-12 max-w-[620px] nav:mb-16">
+              <h2 className="text-[clamp(2rem,3.6vw,2.7rem)] after:mt-4 after:block after:h-[3px] after:w-12 after:bg-mint after:content-['']">
+                {d("galleryTitle")}
+              </h2>
+              <p className="mt-5 text-[1.05rem] text-slate">{d("galleryIntro", { name: solution.name })}</p>
+            </div>
+            <ScreenshotGallery
+              shots={solution.screenshots}
+              labels={{
+                enlarge: d("enlarge"),
+                close: d("close"),
+                previous: d("previous"),
+                next: d("next"),
+                alt: d("screenshotAlt", { name: solution.name }),
+              }}
+            />
           </div>
         </section>
       )}

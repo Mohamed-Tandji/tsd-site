@@ -4,12 +4,16 @@ import { Card, Checkbox, Field, ImageField, TextArea } from "@/components/admin/
 import { inputClass } from "@/components/admin/styles";
 import { LangTabs, SubmitButton } from "@/components/admin/ui";
 
-const FEATURE_ROWS = 4;
+const FEATURE_ROWS = 6;
+const SHOT_ROWS = 8;
 
 type Feature = { title: string; text: string };
 const asFeatures = (value: unknown): Feature[] => (Array.isArray(value) ? (value as Feature[]) : []);
+type Shot = { url: string; captionFr?: string; captionEn?: string };
+const asShots = (value: unknown): Shot[] => (Array.isArray(value) ? (value as Shot[]) : []);
 
 export default function SolutionForm({ solution }: { solution?: Solution }) {
+  const shots = asShots(solution?.screenshots);
   const panel = (locale: "fr" | "en") => {
     const L = locale === "fr" ? "Fr" : "En";
     const feats = asFeatures(solution?.[`features${L}`]);
@@ -67,6 +71,23 @@ export default function SolutionForm({ solution }: { solution?: Solution }) {
         <div className="grid gap-5">
           <ImageField name="logo" label="Logo" current={solution?.logoUrl} hint="PNG à fond transparent conseillé." />
           <ImageField name="image" label="Visuel de la fiche (capture d’écran)" current={solution?.imageUrl} hint="Remplace le logo dans l’en-tête de la fiche." />
+        </div>
+      </Card>
+
+      <Card title="Galerie de la fiche (captures d’écran)">
+        <p className="mb-5 text-sm text-slate">
+          Jusqu’à {SHOT_ROWS} captures, affichées dans cet ordre sous les points clés. Une légende courte aide les visiteurs et les lecteurs d’écran. Au plus 25 Mo d’images par enregistrement : ajouter les captures en plusieurs fois si besoin.
+        </p>
+        <div className="grid gap-5">
+          {Array.from({ length: SHOT_ROWS }, (_, i) => (
+            <div key={i} className="grid gap-3">
+              <ImageField name={`shot${i}`} label={`Capture ${i + 1}`} current={shots[i]?.url} removeLabel="Retirer cette capture" />
+              <div className="grid gap-3 sm:grid-cols-2">
+                <Field name={`shot${i}.captionFr`} label="Légende (FR)" defaultValue={shots[i]?.captionFr} maxLength={200} />
+                <Field name={`shot${i}.captionEn`} label="Légende (EN)" defaultValue={shots[i]?.captionEn} maxLength={200} />
+              </div>
+            </div>
+          ))}
         </div>
       </Card>
 
