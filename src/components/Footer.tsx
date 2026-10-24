@@ -29,7 +29,7 @@ export default async function Footer() {
 
   return (
     <footer className="border-t border-footer-line bg-navy pt-16 text-[15.5px] text-footer">
-      <div className="mx-auto grid max-w-[1120px] grid-cols-1 gap-12 px-6 pb-16 xs:grid-cols-2 nav:grid-cols-[1.7fr_0.8fr_1fr_1.3fr]">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 px-6 pb-16 nav:px-10 xs:grid-cols-2 nav:grid-cols-[1.7fr_0.8fr_1fr_1.3fr]">
         <div>
           <Image src={images.logoWhite} alt="TSD Systems" width={269} height={54} unoptimized className="mb-3 h-[54px] w-auto" />
           <h2 className="sr-only">{t("contact")}</h2>
@@ -118,7 +118,7 @@ export default async function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto flex max-w-[1120px] flex-wrap border-t border-footer-line justify-between gap-x-8 gap-y-3 px-6 pt-6 pb-[calc(24px+env(safe-area-inset-bottom,0px))] text-sm text-footer-muted">
+      <div className="mx-auto flex max-w-[1440px] flex-wrap border-t border-footer-line justify-between gap-x-8 gap-y-3 px-6 nav:px-10 pt-6 pb-[calc(24px+env(safe-area-inset-bottom,0px))] text-sm text-footer-muted">
         <span>{t("rights", { year: new Date().getFullYear() })}</span>
         <span className="flex gap-7">
           <Link href="/mentions-legales" className="text-footer-muted hover:text-white hover:underline">
