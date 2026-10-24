@@ -81,7 +81,12 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <section className="border-t border-line py-[88px] nav:py-[120px]">
         <div className="mx-auto grid max-w-[1120px] grid-cols-1 items-center gap-12 px-6 nav:grid-cols-[0.85fr_1.15fr] nav:gap-16">
           <div className="max-w-[620px]">
-            <h2 className="text-[clamp(2rem,3.6vw,2.7rem)]">{t("nameTitle")}</h2>
+            <h2 className="text-[clamp(2rem,3.6vw,2.7rem)]">
+              {/* « TSD » dans la couleur du logo, même si le titre est modifié dans l'admin */}
+              {t("nameTitle")
+                .split(/(\bTSD\b)/)
+                .map((part, i) => (part === "TSD" ? <span key={i} className="text-brand">{part}</span> : part))}
+            </h2>
             <p className="mt-4 text-slate">{t("nameText")}</p>
             <Link href="/equipe" className="mt-6 inline-block font-semibold text-action underline-offset-4 hover:underline">
               {t("teamLink")} →
