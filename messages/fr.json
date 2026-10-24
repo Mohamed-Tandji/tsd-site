@@ -85,7 +85,14 @@
     "ctaText": "Écrivez-nous : nous vous présentons la solution et répondons à vos questions.",
     "openApp": "Accéder à l’application",
     "newTab": "s’ouvre dans un nouvel onglet",
-    "imageAlt": "Aperçu de {name}"
+    "imageAlt": "Aperçu de {name}",
+    "galleryTitle": "Aperçu de l’application",
+    "galleryIntro": "Quelques écrans de {name}. Cliquez sur une image pour l’agrandir.",
+    "enlarge": "Agrandir la capture",
+    "close": "Fermer",
+    "previous": "Capture précédente",
+    "next": "Capture suivante",
+    "screenshotAlt": "Capture d’écran de {name}"
   },
   "about": {
     "eyebrow": "À propos",

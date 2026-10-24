@@ -85,7 +85,14 @@
     "ctaText": "Write to us: we will present the solution and answer your questions.",
     "openApp": "Open the application",
     "newTab": "opens in a new tab",
-    "imageAlt": "Preview of {name}"
+    "imageAlt": "Preview of {name}",
+    "galleryTitle": "A look at the application",
+    "galleryIntro": "A few screens from {name}. Click an image to enlarge it.",
+    "enlarge": "Enlarge the screenshot",
+    "close": "Close",
+    "previous": "Previous screenshot",
+    "next": "Next screenshot",
+    "screenshotAlt": "Screenshot of {name}"
   },
   "about": {
     "eyebrow": "About",
