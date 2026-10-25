@@ -30,6 +30,7 @@ Tout stockage compatible S3 convient aussi (Wasabi, Scaleway, OVH…).
    ```ini
    [b2]
    type = b2
+   hard_delete = true
    account = <keyID>
    key = <applicationKey>
    ```
@@ -67,7 +68,7 @@ La restauration vérifie d'abord les empreintes SHA-256, remplace la base puis l
 
 Testé en local le 18/10/2026 : sauvegarde, copie « hors serveur », restauration depuis la copie distante
 dans une base vierge, puis comparaison (nombre de lignes et empreinte du contenu identiques, images restaurées).
-**À refaire une fois en production**, puis tous les trois mois, dans une base de test :
+Refait en production le 25/10/2026 depuis B2 (comptes de lignes et empreinte identiques). **À refaire tous les trois mois**, dans une base de test :
 
 ```bash
 docker compose -f docker-compose.prod.yml exec db psql -U tsd -c 'CREATE DATABASE restore_test'
