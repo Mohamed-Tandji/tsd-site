@@ -14,34 +14,35 @@ Sur votre poste, une clé SSH : `ssh-keygen -t ed25519 -C "tsd-vps"` (PowerShell
 
 ## 1. Sécuriser le serveur
 
+VPS OVH (Ubuntu 24.04) : l'utilisateur de travail est `ubuntu` (sudo). À la première connexion
+(`ssh ubuntu@IP_DU_SERVEUR`, mot de passe reçu par courriel), le système impose un nouveau mot de passe :
+se connecter **sans** tuyau `|`, sinon « no TTY available ». Puis, dans la session, ajouter la clé publique :
+`echo "<contenu de id_ed25519.pub>" >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys`.
+
 ```bash
-ssh root@IP_DU_SERVEUR
-
-# Utilisateur de travail avec droits sudo, même clé SSH que root
-adduser tsd
-usermod -aG sudo tsd
-rsync --archive --chown=tsd:tsd ~/.ssh /home/tsd
-
-# Connexion SSH par clé uniquement
-sed -i 's/^#\?PasswordAuthentication .*/PasswordAuthentication no/; s/^#\?PermitRootLogin .*/PermitRootLogin prohibit-password/' /etc/ssh/sshd_config
-systemctl restart ssh
+# Connexion SSH par clé uniquement. Fichier « 00- » : le premier réglage lu l'emporte,
+# et 50-cloud-init.conf réactive sinon les mots de passe.
+printf "PasswordAuthentication no\nPermitRootLogin no\nKbdInteractiveAuthentication no\n" | sudo tee /etc/ssh/sshd_config.d/00-tsd-hardening.conf
+sudo sshd -t && sudo systemctl reload ssh
+sudo sshd -T | grep -E "^(passwordauthentication|permitrootlogin)"   # doit afficher « no » deux fois
 
 # Pare-feu : SSH, HTTP, HTTPS
-ufw allow OpenSSH && ufw allow 80/tcp && ufw allow 443/tcp && ufw allow 443/udp && ufw --force enable
+sudo ufw allow OpenSSH && sudo ufw allow 80/tcp && sudo ufw allow 443/tcp && sudo ufw allow 443/udp && sudo ufw --force enable
 
 # Mises à jour de sécurité automatiques
-apt update && apt -y upgrade && apt -y install unattended-upgrades git
-dpkg-reconfigure -plow unattended-upgrades
+sudo apt update && sudo apt -y upgrade && sudo apt -y install unattended-upgrades git
+sudo dpkg-reconfigure -plow unattended-upgrades
+[ -f /var/run/reboot-required ] && sudo reboot
 ```
 
-Vérifiez dans **un autre terminal** que `ssh tsd@IP_DU_SERVEUR` fonctionne avant de fermer la session root.
+Vérifiez dans **un autre terminal** que `ssh ubuntu@IP_DU_SERVEUR` fonctionne avant de fermer la session.
 
 ## 2. Installer Docker
 
 ```bash
-ssh tsd@IP_DU_SERVEUR
+ssh ubuntu@IP_DU_SERVEUR
 curl -fsSL https://get.docker.com | sudo sh
-sudo usermod -aG docker tsd
+sudo usermod -aG docker ubuntu
 exit   # puis se reconnecter pour que le groupe docker soit pris en compte
 docker --version && docker compose version
 ```
@@ -61,17 +62,16 @@ Chez le gestionnaire de la zone DNS (baisser le TTL à 300 s la veille si possib
 
 ## 4. Récupérer le code
 
-Créer une **clé de déploiement** en lecture seule pour le dépôt privé :
+Le dépôt `Mohamed-Tandji/tsd-site` est public : clonage en HTTPS, sans clé de déploiement.
 
 ```bash
-ssh-keygen -t ed25519 -f ~/.ssh/github_deploy -N "" -C "deploy tsd-site"
-cat ~/.ssh/github_deploy.pub   # à coller dans GitHub : dépôt › Settings › Deploy keys (lecture seule)
-printf 'Host github.com\n  IdentityFile ~/.ssh/github_deploy\n' >> ~/.ssh/config
-
-sudo mkdir -p /opt/tsd-site && sudo chown tsd:tsd /opt/tsd-site
-git clone git@github.com:<compte>/tsd-site.git /opt/tsd-site
+sudo mkdir -p /opt/tsd-site && sudo chown ubuntu:ubuntu /opt/tsd-site
+git clone https://github.com/Mohamed-Tandji/tsd-site.git /opt/tsd-site
 cd /opt/tsd-site
 ```
+
+(Si le dépôt redevient privé : clé de déploiement en lecture seule, `ssh-keygen -t ed25519 -f ~/.ssh/github_deploy`,
+à coller dans GitHub › Settings › Deploy keys, puis cloner en `git@github.com:…`.)
 
 ## 5. Configurer
 

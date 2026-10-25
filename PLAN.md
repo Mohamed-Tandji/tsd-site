@@ -10,4 +10,7 @@
 - [x] 10. Administration (/admin) : connexion, comptes, contenus FR/EN, médias, solutions, équipe, messages, seed
 - [x] 11. Finitions : SEO, accessibilité, performance, pages légales, sauvegardes
 - [x] 12. Mise en ligne : Dockerfile, compose prod (app + PostgreSQL + Caddy), guide VPS, script de vérification (pile testée en local)
-- [ ] Déploiement réel sur le VPS et vérification en production (suivre docs/DEPLOIEMENT.md)
+- [x] Déploiement réel : VPS OVH 158.69.195.191, HTTPS tsdsystems.net + www, script de vérification OK (25/10/2026)
+- [ ] Notifications Resend (DEPLOIEMENT.md §8)
+- [ ] Sauvegardes hors serveur B2 + test de restauration (§9)
+- [ ] Sonde de disponibilité sur /api/health (§10)
