@@ -12,5 +12,5 @@
 - [x] 12. Mise en ligne : Dockerfile, compose prod (app + PostgreSQL + Caddy), guide VPS, script de vérification (pile testée en local)
 - [x] Déploiement réel : VPS OVH 158.69.195.191, HTTPS tsdsystems.net + www, script de vérification OK (25/10/2026)
 - [ ] Notifications Resend (DEPLOIEMENT.md §8)
-- [ ] Sauvegardes hors serveur B2 + test de restauration (§9)
+- [x] Sauvegardes hors serveur B2 (tsdsystemsbucket, clé limitée au bucket) + test de restauration OK (25/10/2026)
 - [ ] Sonde de disponibilité sur /api/health (§10)
